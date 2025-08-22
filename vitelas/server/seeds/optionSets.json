@@ -1,0 +1,46 @@
+[
+  {
+    "key": "finish.metal",
+    "name": "Acabados metal (aluminio/acero)",
+    "options": [
+      { "value": "blanco", "meta": { "look": "brilloso", "colorBoost": true } },
+      { "value": "plateado", "meta": { "look": "metálico" } }
+    ]
+  },
+  {
+    "key": "colors.cotton.adult",
+    "name": "Colores playera algodón (adulto)",
+    "options": [
+      { "value": "Blanco" },
+      { "value": "Negro" },
+      { "value": "Marino" },
+      { "value": "Oxford", "meta": { "composition": "50/50", "finish": "jaspe" } },
+      { "value": "Neón Verde", "meta": { "composition": "65/35", "neon": true } }
+    ]
+  },
+  {
+    "key": "colors.hoodie",
+    "name": "Colores sudaderas",
+    "options": [
+      { "value": "Blanco" },
+      { "value": "Negro" },
+      { "value": "Gris claro jaspe", "meta": { "finish": "jaspe" } },
+      { "value": "Azul Rey" },
+      { "value": "Vino" },
+      { "value": "Lavanda" },
+      { "value": "Beige" },
+      { "value": "Marrón" },
+      { "value": "Verde bosque" },
+      { "value": "Menta" },
+      { "value": "Rosa pastel" },
+      { "value": "Caqui" }
+    ]
+  },
+  {
+    "key": "colors.sublimated.white-only",
+    "name": "Colores playera sublimada (solo blanco)",
+    "options": [
+      { "value": "Blanco" }
+    ]
+  }
+]

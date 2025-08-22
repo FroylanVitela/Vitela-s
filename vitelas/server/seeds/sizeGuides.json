@@ -1,0 +1,23 @@
+[
+  {
+    "key": "tee.adult",
+    "title": "Guía de tallas - Playera adulto",
+    "rows": [
+      { "size": "S", "chest": 48, "length": 67 },
+      { "size": "M", "chest": 51, "length": 70 },
+      { "size": "L", "chest": 54, "length": 73 },
+      { "size": "XL", "chest": 57, "length": 75 }
+    ],
+    "notes": "Mismas medidas para algodón/deportiva/sublimada caballero; dama y niño tienen guías propias."
+  },
+  {
+    "key": "hoodie.unisex",
+    "title": "Guía de tallas - Sudadera unisex",
+    "rows": [
+      { "size": "S", "chest": 52, "length": 65 },
+      { "size": "M", "chest": 55, "length": 68 },
+      { "size": "L", "chest": 58, "length": 71 },
+      { "size": "XL", "chest": 61, "length": 74 }
+    ]
+  }
+]
