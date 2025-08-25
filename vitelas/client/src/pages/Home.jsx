@@ -44,7 +44,7 @@ export default function Home() {
 
           <div className="cta-row">
             <Link className="btn btn-pulse" to="/catalog">Explorar catálogo</Link>
-            <Link className="btn btn-ghost" to="/size-guides">Guías de tallas</Link>
+            <Link className="btn btn-pulse" to="/size-guides">Guías de tallas</Link>
           </div>
 
           <ul className="trust">
@@ -80,7 +80,7 @@ export default function Home() {
         </article>
 
         <article className="tile hover-float" style={{ transitionDelay: '0.2s' }}>
-          <div className="icon floating" style={{ animationDelay: '0.6s' }}>🔖</div>
+          <div className="icon floating" style={{ animationDelay: '0.6s' }}>🪙</div>
           <h3>Llaveros & Placas</h3>
           <p>Acero y acabados especiales para detalles que duran.</p>
           <Link to="/catalog" className="link-cta slide-link">Ver accesorios →</Link>

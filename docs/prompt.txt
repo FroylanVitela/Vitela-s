@@ -1,7 +1,0 @@
-pedir ayuda a chat para mockups
-añadir buzon de comentarios
-
-
-en cuanto al contacto necesitamos quitar por completo el formulario
-y agregar las redes sociales y un bloque de 
-comentarios o referencias

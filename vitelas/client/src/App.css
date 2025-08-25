@@ -409,3 +409,30 @@ tr:last-child td{ border-bottom:0 }
     animation:none !important; transition:none !important;
   }
 }
+/* ======= ALTURA DINÁMICA DEL NAVBAR ======= */
+/* Valor de respaldo: el componente lo actualizará a su altura real */
+:root { --nav-h: 96px; }
+
+/* Empuja el contenido hacia abajo para no quedar tapado por el header fijo */
+body { padding-top: var(--nav-h); }
+
+/* ======= NAVBAR FIJO ======= */
+.navbar{
+  position: fixed;        /* <-- antes: sticky */
+  top: 0; left: 0; right: 0;
+  z-index: 100;           /* sobre el contenido; tu overlay móvil queda en 40, perfecto */
+  background:#fff;
+  box-shadow:0 6px 14px rgba(0,0,0,.08);
+}
+
+/* mantiene tu franja roja superior */
+.navbar-strip{
+  height:6px;
+  background: linear-gradient(90deg, var(--brand), var(--brand-600) 60%, var(--brand-700));
+}
+
+/* ======= MENÚ MÓVIL: que empiece bajo el header ======= */
+.mobile-menu .drawer{
+  /* si ya tienes padding, añade esta línea o reemplázalo por esta */
+  padding-top: calc(var(--nav-h) + 8px);
+}
