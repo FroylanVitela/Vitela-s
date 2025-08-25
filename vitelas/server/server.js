@@ -1,34 +1,28 @@
+// server/server.js (o app.js, el archivo de arranque de tu API)
 const express = require('express');
-const mongoose = require('mongoose');
-const cors = require('cors');
-require('dotenv').config();
-
-const productRoutes = require('./routes/products');
-const optionSetRoutes = require('./routes/optionSets');
-const sizeGuideRoutes = require('./routes/sizeGuides');
-const garmentPackageRoutes = require('./routes/garmentPackages');
-const policyRoutes = require('./routes/policies');
-
 const app = express();
-app.use(cors());
-app.use(express.json());
 
-const mongoURI = process.env.MONGO_URI || 'mongodb://localhost:27017/mitienda';
-mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log('MongoDB connected'))
-  .catch(err => console.error('MongoDB connection error:', err));
+// 1) Logs primero
+app.use(require('./middleware/requestLogger'));
 
-app.use('/api/products', productRoutes);
-app.use('/api/option-sets', optionSetRoutes);
-app.use('/api/size-guides', sizeGuideRoutes);
-app.use('/api/garment-packages', garmentPackageRoutes);
-app.use('/api/policies', policyRoutes);
+// 2) CORS configurado
+app.use(require('./middleware/cors'));
 
-app.get('/', (req, res) => {
-  res.send('API running');
-});
+// 3) Body parser
+app.use(express.json({ limit: '2mb' }));
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log(`Server listening on port ${PORT}`);
-});
+// 4) Sanitizar entradas (opcional recomendado)
+app.use(require('./middleware/sanitize')());
+
+// 5) Rutas
+app.use('/api/products', require('./routes/products'));
+app.use('/api/option-sets', require('./routes/optionSets'));
+app.use('/api/size-guides', require('./routes/sizeGuides'));
+app.use('/api/garment-packages', require('./routes/garmentPackages'));
+app.use('/api/policies', require('./routes/policies'));
+
+// 6) 404 y errores (siempre al final)
+app.use(require('./middleware/notFound'));
+app.use(require('./middleware/error'));
+
+module.exports = app;

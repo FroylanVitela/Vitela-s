@@ -1,11 +1,18 @@
+// server/routes/products.js
 const express = require('express');
 const router = express.Router();
 const controller = require('../controllers/productController');
+const validateObjectId = require('../middleware/validateObjectId');
 
-router.get('/', controller.getAll);
+// Lista con paginación/filtrado definidos en tu controlador
+router.get('/', controller.list);
+
+// Detalle por id (valida ObjectId)
+router.get('/:id', validateObjectId('id'), controller.get);
+
+// Crear / Actualizar / Eliminar
 router.post('/', controller.create);
-router.get('/:id', controller.getById);
-router.put('/:id', controller.update);
-router.delete('/:id', controller.remove);
+router.put('/:id', validateObjectId('id'), controller.update);
+router.delete('/:id', validateObjectId('id'), controller.remove);
 
 module.exports = router;

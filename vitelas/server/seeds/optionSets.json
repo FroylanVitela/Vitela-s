@@ -37,6 +37,23 @@
     ]
   },
   {
+  "key": "colors.kids",
+  "name": "Colores playera niño",
+  "options": [
+    { "value": "Blanco" },
+    { "value": "Negro" },
+    { "value": "Azul marino" },
+    { "value": "Azul rey" },
+    { "value": "Rojo" },
+    { "value": "Verde" },
+    { "value": "Amarillo" },
+    { "value": "Rosa" },
+    { "value": "Gris jaspe", "meta": { "finish": "jaspe" } },
+    { "value": "Neón verde", "meta": { "composition": "65/35", "neon": true } },
+    { "value": "Neón naranja", "meta": { "composition": "65/35", "neon": true } }
+  ]
+},
+  {
     "key": "colors.sublimated.white-only",
     "name": "Colores playera sublimada (solo blanco)",
     "options": [

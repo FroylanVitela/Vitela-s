@@ -1,50 +1,7 @@
 const Product = require('../models/Product');
+const { makeCrudController } = require('./factory');
 
-exports.getAll = async (req, res) => {
-  try {
-    const products = await Product.find();
-    res.json(products);
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
-};
-
-exports.getById = async (req, res) => {
-  try {
-    const product = await Product.findById(req.params.id);
-    if (!product) return res.status(404).json({ message: 'Product not found' });
-    res.json(product);
-  } catch (err) {
-    res.status(400).json({ error: err.message });
-  }
-};
-
-exports.create = async (req, res) => {
-  try {
-    const product = new Product(req.body);
-    await product.save();
-    res.status(201).json(product);
-  } catch (err) {
-    res.status(400).json({ error: err.message });
-  }
-};
-
-exports.update = async (req, res) => {
-  try {
-    const product = await Product.findByIdAndUpdate(req.params.id, req.body, { new: true });
-    if (!product) return res.status(404).json({ message: 'Product not found' });
-    res.json(product);
-  } catch (err) {
-    res.status(400).json({ error: err.message });
-  }
-};
-
-exports.remove = async (req, res) => {
-  try {
-    const product = await Product.findByIdAndDelete(req.params.id);
-    if (!product) return res.status(404).json({ message: 'Product not found' });
-    res.json({ message: 'Product deleted' });
-  } catch (err) {
-    res.status(400).json({ error: err.message });
-  }
-};
+module.exports = makeCrudController(Product, {
+  text: ['name', 'description', 'variants.name'],
+  filterable: ['category', 'subcategory', 'materials', 'tags', 'active']
+});

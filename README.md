@@ -1,6 +1,4 @@
 # Vitela-s
-Sitio oficial Vitela's Gifts &amp; Clothes
-
 Sitio oficial Vitela's Gifts & Clothes
 
 ## Backend

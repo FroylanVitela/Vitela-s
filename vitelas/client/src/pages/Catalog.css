@@ -1,21 +1,36 @@
-.catalog-page {
-  background-color: #fff;
-  padding: 4rem 2rem;
-  text-align: center;
-  margin-top: 4rem;
+.catalog {
+  display: flex;
+  gap: 2rem;
 }
 
-.catalog-page h2 {
-  font-family: 'Merriweather', serif;
-  font-size: 2.5rem;
-  color: #333;
-  margin-bottom: 2rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+.filters {
+  width: 200px;
 }
 
-.productos {
+.filters input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.filters ul {
+  list-style: none;
+  padding: 0;
+}
+
+.filters li {
+  padding: 0.5rem 0;
+  cursor: pointer;
+  color: var(--color-primary);
+}
+
+.filters li.active {
+  font-weight: bold;
+}
+
+.grid {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
 }

@@ -1,9 +1,10 @@
 import './Footer.css';
 
 export default function Footer() {
+  const year = new Date().getFullYear();
   return (
     <footer>
-      <p>&copy; 2024 Vitela's. Todos los derechos reservados.</p>
+      <p>&copy; {year} Vitela's. Todos los derechos reservados.</p>
     </footer>
   );
 }

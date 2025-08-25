@@ -1,23 +1,28 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import Catalog from './pages/Catalog';
+import ProductDetail from './pages/ProductDetail';
+import SizeGuides from './pages/SizeGuides';
+import Contact from './pages/Contact';
+import './theme.css';
 import './App.css';
-import Header from './components/Header.jsx';
-import Home from './pages/Home.jsx';
-import Catalog from './pages/Catalog.jsx';
-import Contact from './pages/Contact.jsx';
-import Footer from './components/Footer.jsx';
+import Navbar from './components/NavBar';
 
-function App() {
+export default function App() {
   return (
-    <Router>
-      <Header />
+    <BrowserRouter>
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/catalog" element={<Catalog />} />
+        <Route path="/product/:id" element={<ProductDetail />} />
+        <Route path="/size-guides" element={<SizeGuides />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
-      <Footer />
-    </Router>
+
+      <footer className="footer">
+        <span>© {new Date().getFullYear()} Vitela’s · Personaliza tu mundo · Todos los derechos reservados.</span>
+      </footer>
+    </BrowserRouter>
   );
 }
-
-export default App;

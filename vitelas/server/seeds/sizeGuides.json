@@ -1,23 +1,65 @@
 [
   {
-    "key": "tee.adult",
-    "title": "Guía de tallas - Playera adulto",
+    "key": "tee.men",
+    "title": "Guía de tallas - Playera caballero",
+    "unit": "cm",
     "rows": [
-      { "size": "S", "chest": 48, "length": 67 },
-      { "size": "M", "chest": 51, "length": 70 },
-      { "size": "L", "chest": 54, "length": 73 },
-      { "size": "XL", "chest": 57, "length": 75 }
+      { "size": "S",  "chest": 46.7, "length": 70.4 },
+      { "size": "M",  "chest": 50.8, "length": 73.0 },
+      { "size": "L",  "chest": 55.8, "length": 75.5 },
+      { "size": "XL", "chest": 60.9, "length": 78.1 },
+      { "size": "2XL","chest": 66.0, "length": 80.6 },
+      { "size": "3XL","chest": 71.3, "length": 84.6 }
     ],
-    "notes": "Mismas medidas para algodón/deportiva/sublimada caballero; dama y niño tienen guías propias."
+    "notes": "Pecho (A) y largo total (B). Tolerancia típica ±1.5 cm."
   },
   {
-    "key": "hoodie.unisex",
-    "title": "Guía de tallas - Sudadera unisex",
+    "key": "tee.women",
+    "title": "Guía de tallas - Playera dama",
+    "unit": "cm",
     "rows": [
-      { "size": "S", "chest": 52, "length": 65 },
-      { "size": "M", "chest": 55, "length": 68 },
-      { "size": "L", "chest": 58, "length": 71 },
-      { "size": "XL", "chest": 61, "length": 74 }
-    ]
+      { "size": "S",  "chest": 43.1, "length": 62.2 },
+      { "size": "M",  "chest": 47.0, "length": 64.1 },
+      { "size": "L",  "chest": 51.8, "length": 66.0 },
+      { "size": "XL", "chest": 54.6, "length": 68.1 }
+    ],
+    "notes": "Medidas aplican a algodón y sublimadas para dama. Tolerancia ±1.5 cm."
+  },
+  {
+    "key": "tee.kids",
+    "title": "Guía de tallas - Playera niño",
+    "unit": "cm",
+    "rows": [
+      { "size": "S",  "chest": 35.5, "length": 48.2 },
+      { "size": "M",  "chest": 38.1, "length": 52.0 },
+      { "size": "L",  "chest": 40.6, "length": 55.8 },
+      { "size": "XL", "chest": 43.1, "length": 59.2 }
+    ],
+    "notes": "Pecho (A) y largo total (B). Tolerancia ±1.5 cm."
+  },
+  {
+    "key": "hoodie.hood-pouch",
+    "title": "Guía de tallas - Sudadera con capucha y cangurera (unisex)",
+    "unit": "cm",
+    "rows": [
+      { "size": "S",  "chest": 50.8, "length": 59.3 },
+      { "size": "M",  "chest": 55.8, "length": 61.9 },
+      { "size": "L",  "chest": 60.9, "length": 64.4 },
+      { "size": "XL", "chest": 66.0, "length": 66.9 }
+    ],
+    "notes": "Valores de la lámina de sudadera con capucha/cangurera. Tolerancia ±1.5 cm."
+  },
+  {
+    "key": "hoodie.plain",
+    "title": "Guía de tallas - Sudadera lisa (unisex)",
+    "unit": "cm",
+    "rows": [
+      { "size": "S",  "chest": 45.7, "length": 67.9 },
+      { "size": "M",  "chest": 53.3, "length": 67.3 },
+      { "size": "L",  "chest": 58.4, "length": 71.1 },
+      { "size": "XL", "chest": 60.9, "length": 72.4 },
+      { "size": "2XL","chest": 63.5, "length": 75.5 }
+    ],
+    "notes": "Medidas de la lámina de sudadera lisa; tolerancia ±1.5 cm."
   }
 ]

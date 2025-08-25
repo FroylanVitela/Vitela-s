@@ -1,55 +1,81 @@
-.contact-page {
-  background-color: #f7f7f7;
-  padding: 4rem 2rem;
-  text-align: center;
+/* Contact page — rojo / blanco / negro */
+.contact-page{
+  background:#fff;
+  padding:2.5rem 1rem;
+  text-align:center;
 }
 
-.contact-page h2 {
-  font-size: 2.5rem;
-  color: #333;
-  margin-bottom: 1.5rem;
+.contact-head h2{
+  font-size:2.2rem; margin:0;
+  color:#111;
+}
+.contact-head .lead{
+  color:#6b7280; margin:.5rem auto 1rem; max-width:860px;
 }
 
-.contact-page form {
-  max-width: 600px;
-  margin: 0 auto;
-  background-color: #fff;
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+.contact-grid{
+  display:grid; grid-template-columns:repeat(3,1fr); gap:1rem;
+  max-width:1000px; margin:0 auto 1rem;
+}
+@media (max-width: 900px){ .contact-grid{ grid-template-columns:1fr } }
+
+.contact-card{
+  display:flex; gap:.8rem; align-items:flex-start; text-align:left;
+  background:#fff; border:1px solid rgba(17,17,17,.08); border-radius:14px; padding:1rem;
+  box-shadow:0 6px 14px rgba(0,0,0,.08); color:#111;
+  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+}
+.contact-card:hover{ transform: translateY(-2px); box-shadow:0 10px 30px rgba(0,0,0,.14); border-color:#e11d48; }
+
+.contact-card .icon{
+  width:48px;height:48px;border-radius:12px;display:grid;place-items:center;color:#fff;flex:0 0 48px;
+}
+.contact-card.wa .icon{ background:#25D366; }
+.contact-card.fb .icon{ background:#1877F2; }
+.contact-card.ig .icon{ background:linear-gradient(45deg,#f58529,#dd2a7b,#8134af,#515bd4); }
+
+.contact-card .meta h3{ margin:.1rem 0 .2rem; font-size:1.05rem; }
+.contact-card .meta p{ margin:0; color:#6b7280; font-size:.95rem; }
+.contact-card .cta{ display:inline-block; margin-top:.35rem; color:#e11d48; font-weight:800; }
+
+.foot-note{
+  margin-top:.5rem; color:#6b7280;
+}
+/* Kicker + claim en Contact */
+.contact-head .kicker{
+  display:inline-block; font-weight:800; color:var(--brand);
+  text-transform:uppercase; letter-spacing:.08em;
+}
+.contact-claim{ font-size:2rem; margin:.25rem 0 .25rem; color:#111; }
+.imaginas{ color:#e11d48 }
+
+/* --- ICONOS SIN FONDO (solo el SVG) --- */
+.contact-card .icon{
+  width:60px;
+  height:60px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex:0 0 28px;
+
+  /* quitar fondo y esquinas redondeadas del recuadro */
+  background:transparent !important;
+  border-radius:0;
+  box-shadow:none;
+  padding:0;
+  color:inherit; /* no forzar blanco */
 }
 
-.contact-page form:hover {
-  transform: scale(1.02);
+/* tamaño del svg */
+.contact-card .icon svg{
+  width:60px;
+  height:60px;
+  display:block;
 }
 
-.contact-page label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-weight: bold;
-  color: #333;
-}
-
-.contact-page input,
-.contact-page textarea {
-  width: 100%;
-  padding: 0.8rem;
-  margin-bottom: 1.5rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.contact-page button {
-  background-color: #e63946;
-  color: #fff;
-  padding: 1rem 2rem;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.contact-page button:hover {
-  background-color: #d62828;
+/* asegurar que ninguna variante ponga fondo */
+.contact-card.wa .icon,
+.contact-card.fb .icon,
+.contact-card.ig .icon{
+  background:transparent !important;
 }

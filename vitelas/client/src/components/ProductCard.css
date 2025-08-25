@@ -1,34 +1,48 @@
 .producto {
-  width: 22%;
-  margin: 1.5rem;
+  width: 200px;
   text-align: center;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  display: inline-block;
+  background: #fff;
+  margin: 1rem;
 }
 
 .producto img {
   width: 100%;
-  height: 250px;
+  height: 150px;
   object-fit: cover;
 }
 
 .producto h3 {
-  font-size: 1.25rem;
+  font-size: 1rem;
   color: #333;
-  margin: 1rem 0;
-  font-weight: 600;
+  margin: 0.5rem 0;
 }
 
 .producto p {
-  font-size: 1rem;
+  font-size: 0.875rem;
   color: #555;
-  padding: 0 1rem 1rem;
+  padding: 0 1rem;
+}
+
+.btn {
+  background: var(--color-primary);
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #482080;
 }
 
 .producto:hover {
-  transform: translateY(-10px);
+  transform: translateY(-4px);
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
