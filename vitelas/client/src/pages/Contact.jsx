@@ -6,10 +6,10 @@ export default function Contact() {
   return (
     <section className="contact-page">
       <header className="contact-head">
-        <span className="kicker">Contacto</span>
-        <h1 className="contact-claim">
+        <h1 className="contact-title">Contacto</h1>
+        <h2 className="contact-claim">
           Personaliza lo que <span className="imaginas">imaginas</span>
-        </h1>
+        </h2>
         <p className="lead">
           Escríbenos por <strong>WhatsApp</strong> para cotizar y coordinar pedidos,
           o síguenos en redes para ver nuestros trabajos y novedades.

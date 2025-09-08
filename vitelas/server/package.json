@@ -8,7 +8,10 @@
     "dev": "nodemon server.js",
     "test": "echo \"No tests specified\"",
     "fix:finishes": "node scripts/normalize-finishes.js",
-    "seed": "node seed.js"
+    "seed": "node seed.js",
+    "seed:fresh": "node seed.js",
+    "seed:drop": "node seed.js --drop",
+    "seed:dev": "node seed.js --dev"
   },
   "dependencies": {
     "cors": "^2.8.5",

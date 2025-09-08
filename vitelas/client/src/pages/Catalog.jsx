@@ -1,112 +1,118 @@
-import { useEffect, useMemo, useState } from 'react';
-import api from '../services/api';
-import ProductCard from '../components/ProductCard';
-import Filters from '../components/Filters';
-import Pagination from '../components/Pagination';
-import useQueryParams from '../hooks/useQueryParams';
+import { useMemo, useState } from 'react';
+import { PRODUCTS, CATEGORIES, MATERIALS } from '../data/products';
 
-export default function Catalog() {
-  const { get, set, getAll } = useQueryParams();
-  const [loading, setLoading] = useState(true);
-  const [err, setErr] = useState('');
-  const [data, setData] = useState([]);
+const categories = [{key:'', name:'Todas'}, ...Object.values(CATEGORIES)];
+const materials  = [{key:'', name:'Todos'}, ...MATERIALS];
 
-  // Estado desde URL
-  const state = {
-    q: get('q', ''),
-    category: get('category', ''),
-    material: get('material', ''),
-    finish: get('finish', ''),
-    page: Number(get('page', '1'))
-  };
+function PriceTiers({ tiers }){
+  return (
+    <div className="card-sub" style={{marginTop:'.35rem'}}>
+      {tiers.map(t => (
+        <div key={t.label}>
+          <strong>{t.label}:</strong> ${t.precio}
+        </div>
+      ))}
+    </div>
+  );
+}
 
-  useEffect(() => {
-    let cancelled = false;
-    async function run() {
-      setLoading(true);
-      setErr('');
-      try {
-        // Primero intentamos server-side (si tu controlador acepta filtros)
-        const res = await api.get('/products', { params: { ...getAll(), limit: 200 } });
-        const items = res.data.items || res.data || [];
-        if (!cancelled) setData(items);
-      } catch (e) {
-        // Fallback: intenta sin params
-        try {
-          const res2 = await api.get('/products');
-          const items2 = res2.data.items || res2.data || [];
-          if (!cancelled) setData(items2);
-        } catch (e2) {
-          if (!cancelled) setErr('No se pudo cargar el catálogo.');
-        }
-      } finally {
-        if (!cancelled) setLoading(false);
-      }
-    }
-    run();
-    return () => { cancelled = true; };
-  }, [getAll]); // refetch si cambian params
+export default function Catalog(){
+  const [q, setQ] = useState('');
+  const [category, setCategory] = useState('');
+  const [material, setMaterial] = useState('');
+  const [modal, setModal] = useState(null); // {product}
 
-  // Aplana variantes en tarjetas
-  const allCards = useMemo(() => {
-    const cards = [];
-    for (const p of data) {
-      for (const v of (p.variants || [])) {
-        cards.push({ productId: p._id || p.id, variant: v, productName: p.name, category: p.category, materials: p.materials });
-      }
-    }
-    return cards;
-  }, [data]);
-
-  // Filtros en cliente (por si el server no filtra)
   const filtered = useMemo(() => {
-    const q = state.q.trim().toLowerCase();
-    return allCards.filter(c => {
-      if (state.category && c.category !== state.category) return false;
-      if (state.material && !(c.materials || []).includes(state.material)) return false;
-      if (state.finish) {
-        const f = c.variant?.attributes?.finish;
-        const fo = c.variant?.attributes?.finishOptions;
-        const ok = (f && f === state.finish) || (Array.isArray(fo) && fo.includes(state.finish));
-        if (!ok) return false;
-      }
-      if (q) {
-        const hay = (c.variant?.name || '').toLowerCase().includes(q) ||
-                    (c.productName || '').toLowerCase().includes(q);
-        if (!hay) return false;
-      }
-      return true;
-    });
-  }, [allCards, state]);
-
-  // Paginación en cliente
-  const pageSize = 24;
-  const pages = Math.max(Math.ceil(filtered.length / pageSize), 1);
-  const page = Math.min(Math.max(state.page, 1), pages);
-  const slice = filtered.slice((page - 1) * pageSize, page * pageSize);
-
-  const onFilters = (next) => set({ ...state, page: 1, ...next });
-  const onPage = (p) => set({ ...state, page: p });
+    let list = PRODUCTS;
+    if (category) list = list.filter(p => p.category === category);
+    if (material) list = list.filter(p => p.material === material);
+    if (q.trim()){
+      const s = q.trim().toLowerCase();
+      list = list.filter(p => (p.title.toLowerCase().includes(s) || p.slug.includes(s)));
+    }
+    return list;
+  }, [q, category, material]);
 
   return (
     <main className="catalog">
       <h1>Catálogo</h1>
-      <div className="catalog-grid">
-        <Filters data={data} value={state} onChange={onFilters} />
-        <section className="cards">
-          {loading && <div className="status">Cargando…</div>}
-          {err && <div className="status error">{err}</div>}
-          {!loading && !err && slice.length === 0 && <div className="status">Sin resultados</div>}
 
-          <div className="grid">
-            {slice.map(({ productId, variant, productName }) => (
-              <ProductCard key={variant.sku || variant.name} productId={productId} variant={variant} productName={productName} />
-            ))}
+      <div className="catalog-grid">
+        {/* Filtros (columna izquierda en desktop) */}
+        <aside className="filters">
+          <div className="f-block">
+            <label>Buscar</label>
+            <input
+              value={q}
+              onChange={e => setQ(e.target.value)}
+              placeholder="Taza, botella, sudadera..."
+            />
           </div>
 
-          <Pagination page={page} pages={pages} onPage={onPage} />
+          <div className="f-block">
+            <label>Categoría</label>
+            <select value={category} onChange={e => setCategory(e.target.value)}>
+              {categories.map(c => <option key={c.key} value={c.key}>{c.name}</option>)}
+            </select>
+          </div>
+
+          <div className="f-block">
+            <label>Material</label>
+            <select value={material} onChange={e => setMaterial(e.target.value)}>
+              {materials.map(m => <option key={m.key} value={m.key}>{m.name}</option>)}
+            </select>
+          </div>
+
+          <div className="note" style={{marginTop:'.75rem'}}>
+            Todos los artículos se pueden personalizar con tu diseño.
+          </div>
+        </aside>
+
+        {/* Cards */}
+        <section className="cards">
+          {!filtered.length && <div className="status">No hay artículos que coincidan.</div>}
+          <div className="grid">
+            {filtered.map(p => (
+              <article className="card hover-float" key={p.slug}>
+                <div className="card-img" style={{
+                  backgroundImage:`url(/catalog/${p.slug}.jpg)`
+                }} />
+                <div className="card-body">
+                  <h3 className="card-title">{p.title}</h3>
+                  <div className="card-sub">
+                    <em>{CATEGORIES[p.category]?.name}</em> · {MATERIALS.find(m=>m.key===p.material)?.name}
+                  </div>
+                  <PriceTiers tiers={p.priceTiers} />
+                  <button className="card-btn" onClick={() => setModal(p)}>Ver más</button>
+                </div>
+              </article>
+            ))}
+          </div>
         </section>
       </div>
+
+      {/* Modal de detalle */}
+      {modal && (
+        <div className="catalog-modal-overlay" onClick={() => setModal(null)}>
+          <div className="catalog-modal" onClick={e => e.stopPropagation()}>
+            <button className="catalog-modal-close" onClick={() => setModal(null)} aria-label="Cerrar">×</button>
+            <img className="catalog-modal-img" src={`/catalog/${modal.slug}.jpg`} alt={modal.title} />
+            <div className="catalog-modal-content">
+              <div className="catalog-modal-title">{modal.title}</div>
+              <div className="catalog-modal-sub">
+                <em>{CATEGORIES[modal.category]?.name}</em> · {MATERIALS.find(m=>m.key===modal.material)?.name}
+              </div>
+              <div className="catalog-modal-prices">
+                {modal.priceTiers.map(t => (
+                  <div key={t.label}>{t.label}: <strong>${t.precio}</strong></div>
+                ))}
+              </div>
+              {/* Aquí puedes agregar más información específica si existe, como descripción, detalles, etc. */}
+              {modal.desc && <div className="catalog-modal-desc">{modal.desc}</div>}
+            </div>
+          </div>
+        </div>
+      )}
     </main>
   );
 }

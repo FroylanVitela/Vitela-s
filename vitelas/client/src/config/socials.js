@@ -1,16 +1,12 @@
 // client/src/config/socials.js
-// Reemplaza con tus datos reales
 export const SOCIAL = {
   whatsapp: {
-    // número en formato internacional (México = 52 + 10 dígitos)
-    phone: '524491958263', // ← 449 195 8263
-    message: "Hola Vitela’s, quiero personalizar un pedido 👋"
+    phone: '524491958263', 
+    message: "Hola Vitela’s👋, me gustaria hacer un pedido 😁"
   },
-  facebook: 'https://facebook.com/vitelas',   // ← reemplaza
-  instagram: 'https://instagram.com/vitelas'  // ← reemplaza
+  facebook: 'https://www.facebook.com/share/14JHHjhaKUq/',   // ← reemplaza
+  instagram: 'https://www.instagram.com/vitelas_gifts_and_clothes?igsh=ZDBtOHVhZjRrcDEy'  // ← reemplaza
 };
-
-// Crea el link directo a WhatsApp con el mensaje prellenado
 export function waLink() {
   const { phone, message } = SOCIAL.whatsapp;
   const q = new URLSearchParams({ text: message }).toString();

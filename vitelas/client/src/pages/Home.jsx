@@ -1,11 +1,15 @@
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
+import { HeroSlider } from '../components/HeroSlider';
+import slider1 from '../assets/slider1.jpg';
+import slider2 from '../assets/slider2.jpg';
+import slider3 from '../assets/slider3.jpg';
 
 /* Animación de aparición simple (sin librerías) */
-function useRevealOnScroll(){
+function useRevealOnScroll() {
   useEffect(() => {
     const els = Array.from(document.querySelectorAll('[data-reveal]'));
-    if(!('IntersectionObserver' in window)){ els.forEach(el => el.classList.add('is-visible')); return; }
+    if (!('IntersectionObserver' in window)) { els.forEach(el => el.classList.add('is-visible')); return; }
     const io = new IntersectionObserver((entries) => {
       entries.forEach(e => {
         if (e.isIntersecting) {
@@ -54,12 +58,11 @@ export default function Home() {
           </ul>
         </div>
 
-        <div className="hero-visual" aria-hidden>
-          <div className="floating-products">
-            <div className="floating-item" style={{ '--delay': '0s', '--x': '20px', '--y': '-10px' }}>☕</div>
-            <div className="floating-item" style={{ '--delay': '1s', '--x': '-15px', '--y': '15px' }}>👕</div>
-            <div className="floating-item" style={{ '--delay': '2s', '--x': '10px', '--y': '20px' }}>🔖</div>
-          </div>
+        <div className="hero-visual">
+          <HeroSlider
+            images={[slider1, slider2, slider3]}
+            interval={3500}
+          />
         </div>
       </section>
 

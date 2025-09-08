@@ -1,47 +1,40 @@
-import { useState, useEffect } from 'react';
+
 import './HeroSlider.css';
+import { useEffect, useRef, useState } from 'react';
 
-const images = [
-  'https://source.unsplash.com/random/1000x500?mug',
-  'https://source.unsplash.com/random/1000x500?bottle',
-  'https://source.unsplash.com/random/1000x500?tshirt'
-];
-
-export default function HeroSlider() {
-  const [current, setCurrent] = useState(0);
+export function HeroSlider({ images = [], interval = 4000 }){
+  const [idx, setIdx] = useState(0);
+  const timer = useRef(null);
 
   useEffect(() => {
-    const id = setInterval(() => {
-      setCurrent((c) => (c + 1) % images.length);
-    }, 5000);
-    return () => clearInterval(id);
-  }, []);
-
-  const prev = () => {
-    setCurrent((current - 1 + images.length) % images.length);
-  };
-
-  const next = () => {
-    setCurrent((current + 1) % images.length);
-  };
+    if (!images.length) return;
+    timer.current = setInterval(() => {
+      setIdx(i => (i + 1) % images.length);
+    }, interval);
+    return () => clearInterval(timer.current);
+  }, [images.length, interval]);
 
   return (
-    <section id="bienvenida" className="slider">
-      <div className="slides">
-        {images.map((src, index) => (
-          <div key={src} className={`slide ${index === current ? 'active' : ''}`}>
-            <img src={src} alt={`Slide ${index + 1}`} />
-          </div>
+    <div className="hero-slider">
+      {images.map((src, i) => (
+        <div
+          key={src}
+          className={`hero-slide ${i === idx ? 'active' : ''}`}
+          style={{ backgroundImage:`url(${src})` }}
+          aria-hidden={i !== idx}
+        />
+      ))}
+      <div className="hero-dots" role="tablist" aria-label="Cambiar imagen">
+        {images.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setIdx(i)}
+            className={`dot ${i===idx?'active':''}`}
+            aria-label={`Ir al slide ${i+1}`}
+            aria-selected={i===idx}
+          />
         ))}
       </div>
-      <div className="slider-controls">
-        <button className="prev" onClick={prev}>⟨</button>
-        <button className="next" onClick={next}>⟩</button>
-      </div>
-      <div className="bienvenida-content">
-        <h2 className="bienvenida-titulo">Bienvenidos a Vitela's</h2>
-        <p className="bienvenida-descripcion">Personalizamos tus momentos especiales con artículos únicos.</p>
-      </div>
-    </section>
+    </div>
   );
 }

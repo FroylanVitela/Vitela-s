@@ -76,3 +76,34 @@
   margin: 0;
   font-size: 1.2rem;
 }
+/* === Slider del hero === */
+.hero-slider{
+  position:relative;
+  height:260px;
+  border-radius:16px;
+  overflow:hidden;
+  border:1px solid var(--line);
+  box-shadow:0 10px 30px rgba(0,0,0,.16);
+  background:#fff;
+}
+.hero-slide{
+  position:absolute; inset:0;
+  background-size:cover; background-position:center;
+  opacity:0; transform:scale(1.02);
+  transition: opacity .5s ease, transform .6s ease;
+}
+.hero-slide.active{ opacity:1; transform:none; }
+.hero-dots{
+  position:absolute; left:0; right:0; bottom:10px;
+  display:flex; gap:.4rem; justify-content:center;
+}
+.hero-dots .dot{
+  width:9px; height:9px; border-radius:50%;
+  border:1px solid rgba(0,0,0,.35);
+  background:rgba(255,255,255,.8);
+}
+.hero-dots .dot.active{ background:var(--brand); border-color:var(--brand); }
+
+@media (max-width:900px){
+  .hero-slider{ height:220px; }
+}

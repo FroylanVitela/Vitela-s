@@ -1,878 +1,156 @@
 [
   {
-    "slug": "tazas",
-    "name": "Tazas",
+    "slug": "taza-blanca-11oz",
+    "name": "Taza blanca 11oz",
     "category": "drinkware",
-    "subcategory": "mugs",
-    "materials": [
-      "cerámica"
-    ],
-    "customization": {
-      "printableAreas": [
-        "frente",
-        "ambos-lados"
-      ],
-      "doubleSidedSupported": true,
-      "technique": [
-        "sublimación"
-      ]
-    },
-    "finishes": [
-      "blanco",
-      "negro",
-      "perlado",
-      "espejo",
-      "asa/interior color",
-      "asa/interior color + cuchara",
-      "cónica 12 oz",
-      "cónica 17 oz",
-      "mágica 11 oz",
-      "mágica cónica 12 oz",
-      "mágica cónica 17 oz"
-    ],
+    "subCategory": "tazas",
+    "summary": "Taza de cerámica lista para sublimación. Ideal para regalo y promociones.",
+    "tags": ["sublimación", "taza", "regalo"],
+    "image": "https://images.unsplash.com/photo-1528701800489-20be3c2ea4fd?q=80&w=800&auto=format&fit=crop",
     "variants": [
       {
-        "sku": "MUG-WHT-11",
-        "name": "Taza blanca 11 oz",
+        "sku": "MUG-11OZ-1CARA",
+        "name": "11oz • 1 cara",
         "attributes": {
-          "color": "blanco",
-          "capacityOz": 11
+          "material": "Cerámica",
+          "finish": "Sublimación",
+          "capacityOz": 11,
+          "sides": "1"
         },
+        "image": "https://images.unsplash.com/photo-1484882918957-e9ba1f34c05a?q=80&w=800&auto=format&fit=crop",
         "priceTiers": [
-          {
-            "range": {
-              "min": 1,
-              "max": 11
-            },
-            "price": 135
-          },
-          {
-            "range": {
-              "min": 12,
-              "max": 36
-            },
-            "price": 115
-          },
-          {
-            "range": {
-              "min": 37,
-              "max": null
-            },
-            "price": 105
-          }
+          { "minQty": 1, "price": 89 },
+          { "minQty": 12, "price": 79 },
+          { "minQty": 50, "price": 69 }
         ]
       },
       {
-        "sku": "MUG-BLK-11",
-        "name": "Taza negra 11 oz",
+        "sku": "MUG-11OZ-2CARAS",
+        "name": "11oz • 2 caras",
         "attributes": {
-          "color": "negro",
-          "capacityOz": 11
+          "material": "Cerámica",
+          "finish": "Sublimación",
+          "capacityOz": 11,
+          "sides": "2"
         },
+        "image": "https://images.unsplash.com/photo-1544280722-83f37fcd9dc5?q=80&w=800&auto=format&fit=crop",
         "priceTiers": [
-          {
-            "range": {
-              "min": 1,
-              "max": 11
-            },
-            "price": 135
-          },
-          {
-            "range": {
-              "min": 12,
-              "max": 36
-            },
-            "price": 115
-          },
-          {
-            "range": {
-              "min": 37,
-              "max": null
-            },
-            "price": 105
-          }
-        ]
-      },
-      {
-        "sku": "MUG-HEART",
-        "name": "Taza con asa de corazón",
-        "attributes": {
-          "feature": "asa-corazon"
-        },
-        "priceTiers": [
-          {
-            "range": {
-              "min": 1,
-              "max": 11
-            },
-            "price": 95
-          },
-          {
-            "range": {
-              "min": 12,
-              "max": 36
-            },
-            "price": 75
-          },
-          {
-            "range": {
-              "min": 37,
-              "max": null
-            },
-            "price": 65
-          }
-        ]
-      },
-      {
-        "sku": "MUG-PEARL",
-        "name": "Taza perlada",
-        "attributes": {
-          "finish": "perlado"
-        },
-        "priceTiers": [
-          {
-            "range": {
-              "min": 1,
-              "max": 11
-            },
-            "price": 150
-          },
-          {
-            "range": {
-              "min": 12,
-              "max": 36
-            },
-            "price": 130
-          },
-          {
-            "range": {
-              "min": 37,
-              "max": null
-            },
-            "price": 115
-          }
-        ]
-      },
-      {
-        "sku": "MUG-MIRROR",
-        "name": "Taza acabado espejo",
-        "attributes": {
-          "finish": "espejo"
-        },
-        "priceTiers": [
-          {
-            "range": {
-              "min": 1,
-              "max": 11
-            },
-            "price": 150
-          },
-          {
-            "range": {
-              "min": 12,
-              "max": 36
-            },
-            "price": 130
-          },
-          {
-            "range": {
-              "min": 37,
-              "max": null
-            },
-            "price": 115
-          }
-        ]
-      },
-      {
-        "sku": "MUG-INTCOLOR",
-        "name": "Taza con asa e interior de color",
-        "attributes": {
-          "feature": "asa-interior-color"
-        },
-        "priceTiers": [
-          {
-            "range": {
-              "min": 1,
-              "max": 11
-            },
-            "price": 120
-          },
-          {
-            "range": {
-              "min": 12,
-              "max": 36
-            },
-            "price": 105
-          },
-          {
-            "range": {
-              "min": 37,
-              "max": null
-            },
-            "price": 95
-          }
-        ]
-      },
-      {
-        "sku": "MUG-INTCOLOR-SPN",
-        "name": "Taza con asa/interior de color y cuchara",
-        "attributes": {
-          "feature": "asa-interior-color-cuchara"
-        },
-        "priceTiers": [
-          {
-            "range": {
-              "min": 1,
-              "max": 11
-            },
-            "price": 135
-          },
-          {
-            "range": {
-              "min": 12,
-              "max": 36
-            },
-            "price": 115
-          },
-          {
-            "range": {
-              "min": 37,
-              "max": null
-            },
-            "price": 95
-          }
-        ]
-      },
-      {
-        "sku": "MUG-CONE-12",
-        "name": "Taza cónica 12 oz",
-        "attributes": {
-          "shape": "cónica",
-          "capacityOz": 12
-        },
-        "priceTiers": [
-          {
-            "range": {
-              "min": 1,
-              "max": 11
-            },
-            "price": 120
-          },
-          {
-            "range": {
-              "min": 12,
-              "max": 36
-            },
-            "price": 105
-          },
-          {
-            "range": {
-              "min": 37,
-              "max": null
-            },
-            "price": 95
-          }
-        ]
-      },
-      {
-        "sku": "MUG-CONE-17",
-        "name": "Taza cónica 17 oz",
-        "attributes": {
-          "shape": "cónica",
-          "capacityOz": 17
-        },
-        "priceTiers": [
-          {
-            "range": {
-              "min": 1,
-              "max": 11
-            },
-            "price": 150
-          },
-          {
-            "range": {
-              "min": 12,
-              "max": 36
-            },
-            "price": 130
-          },
-          {
-            "range": {
-              "min": 37,
-              "max": null
-            },
-            "price": 115
-          }
-        ]
-      },
-      {
-        "sku": "MUG-MAGIC-11",
-        "name": "Taza mágica 11 oz",
-        "attributes": {
-          "feature": "mágica",
-          "capacityOz": 11
-        },
-        "priceTiers": [
-          {
-            "range": {
-              "min": 1,
-              "max": 11
-            },
-            "price": 140
-          },
-          {
-            "range": {
-              "min": 12,
-              "max": 36
-            },
-            "price": 120
-          },
-          {
-            "range": {
-              "min": 37,
-              "max": null
-            },
-            "price": 105
-          }
-        ]
-      },
-      {
-        "sku": "MUG-MAGIC-CONE-12",
-        "name": "Taza mágica cónica 12 oz",
-        "attributes": {
-          "feature": "mágica",
-          "shape": "cónica",
-          "capacityOz": 12
-        },
-        "priceTiers": [
-          {
-            "range": {
-              "min": 1,
-              "max": 11
-            },
-            "price": 175
-          },
-          {
-            "range": {
-              "min": 12,
-              "max": 36
-            },
-            "price": 155
-          },
-          {
-            "range": {
-              "min": 37,
-              "max": null
-            },
-            "price": 140
-          }
-        ]
-      },
-      {
-        "sku": "MUG-MAGIC-CONE-17",
-        "name": "Taza mágica cónica 17 oz",
-        "attributes": {
-          "feature": "mágica",
-          "shape": "cónica",
-          "capacityOz": 17
-        },
-        "priceTiers": [
-          {
-            "range": {
-              "min": 1,
-              "max": 11
-            },
-            "price": 175
-          },
-          {
-            "range": {
-              "min": 12,
-              "max": 36
-            },
-            "price": 155
-          },
-          {
-            "range": {
-              "min": 37,
-              "max": null
-            },
-            "price": 140
-          }
+          { "minQty": 1, "price": 99 },
+          { "minQty": 12, "price": 89 },
+          { "minQty": 50, "price": 79 }
         ]
       }
     ]
   },
+
   {
-    "slug": "botellas-aluminio",
-    "name": "Botellas de aluminio",
-    "category": "drinkware",
-    "subcategory": "aluminum-bottles",
-    "materials": [
-      "aluminio"
-    ],
-    "finishes": [
-      "blanco",
-      "plateado"
-    ],
-    "customization": {
-      "printableAreas": [
-        "frente"
-      ],
-      "doubleSidedSupported": false,
-      "technique": [
-        "sublimación"
-      ]
-    },
+    "slug": "playera-algodon-unisex",
+    "name": "Playera algodón unisex",
+    "category": "garments",
+    "subCategory": "playeras",
+    "summary": "Playera 100% algodón con impresión DTF. Tallas unisex S–XXL.",
+    "tags": ["dtf", "playera", "unisex"],
+    "image": "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=800&auto=format&fit=crop",
     "variants": [
       {
-        "sku": "ALU-SCRW",
-        "name": "Botella con taparrosca",
-        "attributes": {
-          "capType": "taparrosca",
-          "finishOptions": [
-            "blanco",
-            "plateado"
-          ]
-        },
+        "sku": "TEE-BLANCO-S",
+        "name": "Blanco / S",
+        "attributes": { "material": "Algodón", "finish": "DTF", "color": "Blanco", "size": "S", "fit": "Unisex" },
+        "image": "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?q=80&w=800&auto=format&fit=crop",
         "priceTiers": [
-          {
-            "range": {
-              "min": 1,
-              "max": 11
-            },
-            "price": 200
-          },
-          {
-            "range": {
-              "min": 12,
-              "max": 36
-            },
-            "price": 175
-          },
-          {
-            "range": {
-              "min": 37,
-              "max": null
-            },
-            "price": 165
-          }
+          { "minQty": 1, "price": 160 },
+          { "minQty": 12, "price": 140 },
+          { "minQty": 50, "price": 120 }
         ]
       },
       {
-        "sku": "ALU-SODA",
-        "name": "Lata tipo refresco",
-        "attributes": {
-          "shape": "lata",
-          "capacityMl": 300,
-          "finishOptions": [
-            "blanco",
-            "plateado"
-          ]
-        },
+        "sku": "TEE-BLANCO-M",
+        "name": "Blanco / M",
+        "attributes": { "material": "Algodón", "finish": "DTF", "color": "Blanco", "size": "M", "fit": "Unisex" },
+        "image": "https://images.unsplash.com/photo-1548883354-94bcfe321c0f?q=80&w=800&auto=format&fit=crop",
         "priceTiers": [
-          {
-            "range": {
-              "min": 1,
-              "max": 11
-            },
-            "price": 135
-          },
-          {
-            "range": {
-              "min": 12,
-              "max": 36
-            },
-            "price": 120
-          },
-          {
-            "range": {
-              "min": 37,
-              "max": null
-            },
-            "price": 105
-          }
+          { "minQty": 1, "price": 160 },
+          { "minQty": 12, "price": 140 },
+          { "minQty": 50, "price": 120 }
         ]
       },
       {
-        "sku": "ALU-PRESS",
-        "name": "Botella botón presionable",
-        "attributes": {
-          "capType": "botón",
-          "finishOptions": [
-            "blanco",
-            "plateado"
-          ]
-        },
+        "sku": "TEE-NEGRO-L",
+        "name": "Negro / L",
+        "attributes": { "material": "Algodón", "finish": "DTF", "color": "Negro", "size": "L", "fit": "Unisex" },
+        "image": "https://images.unsplash.com/photo-1520975922284-9d67301ba62e?q=80&w=800&auto=format&fit=crop",
         "priceTiers": [
-          {
-            "range": {
-              "min": 1,
-              "max": 11
-            },
-            "price": 140
-          },
-          {
-            "range": {
-              "min": 12,
-              "max": 36
-            },
-            "price": 125
-          },
-          {
-            "range": {
-              "min": 37,
-              "max": null
-            },
-            "price": 115
-          }
-        ]
-      },
-      {
-        "sku": "ALU-SPORT",
-        "name": "Botella deportiva",
-        "attributes": {
-          "capType": "sport",
-          "finishOptions": [
-            "blanco",
-            "plateado"
-          ]
-        },
-        "priceTiers": [
-          {
-            "range": {
-              "min": 1,
-              "max": 11
-            },
-            "price": 200
-          },
-          {
-            "range": {
-              "min": 12,
-              "max": 36
-            },
-            "price": 175
-          },
-          {
-            "range": {
-              "min": 37,
-              "max": null
-            },
-            "price": 165
-          }
-        ]
-      },
-      {
-        "sku": "ALU-KIDS",
-        "name": "Botella infantil",
-        "attributes": {
-          "audience": "kids",
-          "finishOptions": [
-            "blanco",
-            "plateado"
-          ]
-        },
-        "priceTiers": [
-          {
-            "range": {
-              "min": 1,
-              "max": 11
-            },
-            "price": 200
-          },
-          {
-            "range": {
-              "min": 12,
-              "max": 36
-            },
-            "price": 175
-          },
-          {
-            "range": {
-              "min": 37,
-              "max": null
-            },
-            "price": 165
-          }
+          { "minQty": 1, "price": 170 },
+          { "minQty": 12, "price": 150 },
+          { "minQty": 50, "price": 130 }
         ]
       }
     ]
   },
+
   {
-    "slug": "acero",
-    "name": "Recipientes de acero",
-    "category": "drinkware",
-    "subcategory": "steel",
-    "materials": [
-      "acero inoxidable"
-    ],
-    "finishes": [
-      "plateado",
-      "blanco"
-    ],
-    "customization": {
-      "technique": [
-        "sublimación"
-      ],
-      "doubleSidedSupported": true
-    },
+    "slug": "sudadera-unisex-capucha",
+    "name": "Sudadera unisex con capucha",
+    "category": "garments",
+    "subCategory": "sudaderas",
+    "summary": "Sudadera térmica con impresión DTF. Tallas S–XXL.",
+    "tags": ["dtf", "sudadera", "hoodie"],
+    "image": "https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop",
     "variants": [
       {
-        "sku": "ST-TRAVEL",
-        "name": "Jarra viajera",
-        "attributes": {
-          "type": "jarra",
-          "lid": true,
-          "insulated": true
-        },
+        "sku": "HOODIE-GRIS-M",
+        "name": "Gris / M",
+        "attributes": { "material": "Algodón/Poliéster", "finish": "DTF", "color": "Gris", "size": "M", "hood": true },
+        "image": "https://images.unsplash.com/photo-1520975867597-0af37a22e31a?q=80&w=800&auto=format&fit=crop",
         "priceTiers": [
-          {
-            "range": {
-              "min": 1,
-              "max": 11
-            },
-            "price": 200
-          },
-          {
-            "range": {
-              "min": 12,
-              "max": 36
-            },
-            "price": 175
-          },
-          {
-            "range": {
-              "min": 37,
-              "max": null
-            },
-            "price": 165
-          }
+          { "minQty": 1, "price": 280 },
+          { "minQty": 12, "price": 260 },
+          { "minQty": 50, "price": 230 }
         ]
       },
       {
-        "sku": "ST-YETI-20",
-        "name": "Vaso YETI 20 oz",
-        "attributes": {
-          "capacityOz": 20,
-          "lid": true,
-          "insulated": true
-        },
+        "sku": "HOODIE-NEGRO-L",
+        "name": "Negro / L",
+        "attributes": { "material": "Algodón/Poliéster", "finish": "DTF", "color": "Negro", "size": "L", "hood": true },
+        "image": "https://images.unsplash.com/photo-1520975867597-0af37a22e31a?q=80&w=800&auto=format&fit=crop",
         "priceTiers": [
-          {
-            "range": {
-              "min": 1,
-              "max": 11
-            },
-            "price": 200
-          },
-          {
-            "range": {
-              "min": 12,
-              "max": 36
-            },
-            "price": 175
-          },
-          {
-            "range": {
-              "min": 37,
-              "max": null
-            },
-            "price": 165
-          }
+          { "minQty": 1, "price": 290 },
+          { "minQty": 12, "price": 270 },
+          { "minQty": 50, "price": 240 }
         ]
       }
     ]
   },
+
   {
-    "slug": "vidrio",
-    "name": "Tequileros y envases de vidrio",
-    "category": "glassware",
-    "subcategory": "shots-and-glass",
-    "materials": [
-      "vidrio",
-      "cerámica"
-    ],
-    "customization": {
-      "technique": [
-        "sublimación"
-      ],
-      "doubleSidedSupported": true
-    },
-    "variants": [
-      {
-        "sku": "GL-SHOT",
-        "name": "Tequilero de vidrio",
-        "attributes": {
-          "type": "shot"
-        },
-        "priceTiers": [
-          {
-            "range": {
-              "min": 1,
-              "max": 11
-            },
-            "price": 135
-          },
-          {
-            "range": {
-              "min": 12,
-              "max": 36
-            },
-            "price": 115
-          },
-          {
-            "range": {
-              "min": 37,
-              "max": null
-            },
-            "price": 105
-          }
-        ]
-      },
-      {
-        "sku": "GL-SHOT-CR",
-        "name": "Tequilero de cerámica",
-        "attributes": {
-          "type": "shot-ceramica"
-        },
-        "priceTiers": [
-          {
-            "range": {
-              "min": 1,
-              "max": 11
-            },
-            "price": 150
-          },
-          {
-            "range": {
-              "min": 12,
-              "max": 36
-            },
-            "price": 130
-          },
-          {
-            "range": {
-              "min": 37,
-              "max": null
-            },
-            "price": 115
-          }
-        ]
-      },
-      {
-        "sku": "GL-SKINNY-BAMBOO",
-        "name": "Skinny de vidrio con tapa de bambú",
-        "attributes": {
-          "type": "skinny",
-          "lid": "bambú"
-        },
-        "priceTiers": [
-          {
-            "range": {
-              "min": 1,
-              "max": 11
-            },
-            "price": 200
-          },
-          {
-            "range": {
-              "min": 12,
-              "max": 36
-            },
-            "price": 175
-          },
-          {
-            "range": {
-              "min": 37,
-              "max": null
-            },
-            "price": 165
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "slug": "llaveros-placas-destapadores",
-    "name": "Llaveros, placas y destapadores",
+    "slug": "llavero-acero-rectangular",
+    "name": "Llavero de acero rectangular",
     "category": "accessories",
-    "subcategory": "keychains-tags-openers",
-    "materials": [
-      "aluminio",
-      "acero"
-    ],
-    "customization": {
-      "technique": [
-        "sublimación"
-      ],
-      "doubleSidedSupported": true
-    },
-    "finishes": [
-      "blanco",
-      "plateado"
-    ],
+    "subCategory": "llaveros",
+    "summary": "Llavero de acero para grabado o sublimación con placa rectangular.",
+    "tags": ["llavero", "acero", "accesorio"],
+    "image": "https://images.unsplash.com/photo-1618424181497-157f2dfb1ad0?q=80&w=800&auto=format&fit=crop",
     "variants": [
       {
-        "sku": "TAG-BONE",
-        "name": "Placa forma hueso (mascota)",
-        "attributes": {
-          "shape": "hueso",
-          "widthCm": 4.5,
-          "heightCm": 3.5
-        },
+        "sku": "KEY-RECT-ACERO",
+        "name": "Rectangular",
+        "attributes": { "material": "Acero", "finish": "Sublimación", "shape": "Rectangular" },
+        "image": "https://images.unsplash.com/photo-1520523839897-bd0b52f945a7?q=80&w=800&auto=format&fit=crop",
         "priceTiers": [
-          {
-            "range": {
-              "min": 1,
-              "max": 11
-            },
-            "price": 80
-          },
-          {
-            "range": {
-              "min": 12,
-              "max": 36
-            },
-            "price": 60
-          },
-          {
-            "range": {
-              "min": 37,
-              "max": null
-            },
-            "price": 50
-          }
+          { "minQty": 1, "price": 60 },
+          { "minQty": 25, "price": 50 },
+          { "minQty": 100, "price": 40 }
         ]
       },
       {
-        "sku": "OPENER-STEEL",
-        "name": "Destapador de acero",
-        "attributes": {
-          "material": "acero",
-          "lengthCm": 14,
-          "widthCm": 4
-        },
+        "sku": "KEY-CIRC-ACERO",
+        "name": "Circular",
+        "attributes": { "material": "Acero", "finish": "Sublimación", "shape": "Circular" },
+        "image": "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=800&auto=format&fit=crop",
         "priceTiers": [
-          {
-            "range": {
-              "min": 1,
-              "max": 11
-            },
-            "price": 80
-          },
-          {
-            "range": {
-              "min": 12,
-              "max": 36
-            },
-            "price": 60
-          },
-          {
-            "range": {
-              "min": 37,
-              "max": null
-            },
-            "price": 50
-          }
+          { "minQty": 1, "price": 60 },
+          { "minQty": 25, "price": 50 },
+          { "minQty": 100, "price": 40 }
         ]
       }
     ]

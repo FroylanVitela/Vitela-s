@@ -1,65 +1,85 @@
 [
   {
-    "key": "tee.men",
-    "title": "Guía de tallas - Playera caballero",
-    "unit": "cm",
+    "slug": "playeras-caballero",
+    "title": "Playeras • Caballero",
+    "garment": "playera",
+    "audience": "caballero",
+    "variant": "",
+    "columns": ["Talla", "Pecho (cm)", "Pecho (in)", "Largo (cm)", "Largo (in)"],
     "rows": [
-      { "size": "S",  "chest": 46.7, "length": 70.4 },
-      { "size": "M",  "chest": 50.8, "length": 73.0 },
-      { "size": "L",  "chest": 55.8, "length": 75.5 },
-      { "size": "XL", "chest": 60.9, "length": 78.1 },
-      { "size": "2XL","chest": 66.0, "length": 80.6 },
-      { "size": "3XL","chest": 71.3, "length": 84.6 }
+      ["CH", "46.7", "18", "70.4", "27 3/4"],
+      ["M",  "50.8", "20", "73",   "28 3/4"],
+      ["G",  "55.8", "22", "75.5", "29 3/4"],
+      ["EG (XL)", "60.9", "24", "78.1", "30 3/4"],
+      ["EEG (2XL)", "66.0", "26", "80.6", "31 3/4"],
+      ["EEEG (3XL)", "71.3", "27", "84.6", "33 3/4"]
     ],
-    "notes": "Pecho (A) y largo total (B). Tolerancia típica ±1.5 cm."
+    "imageUrl": "/size-guides/playera-caballero.jpg",
+    "notes": "Medidas de referencia. Puede existir tolerancia ±1–2 cm."
   },
   {
-    "key": "tee.women",
-    "title": "Guía de tallas - Playera dama",
-    "unit": "cm",
+    "slug": "playeras-dama",
+    "title": "Playeras • Dama",
+    "garment": "playera",
+    "audience": "dama",
+    "variant": "",
+    "columns": ["Talla", "Pecho (cm)", "Pecho (in)", "Largo (cm)", "Largo (in)"],
     "rows": [
-      { "size": "S",  "chest": 43.1, "length": 62.2 },
-      { "size": "M",  "chest": 47.0, "length": 64.1 },
-      { "size": "L",  "chest": 51.8, "length": 66.0 },
-      { "size": "XL", "chest": 54.6, "length": 68.1 }
+      ["CH", "43.1", "17", "62.2", "24 1/2"],
+      ["M",  "47.0", "18 1/2", "64.1", "25 1/4"],
+      ["G",  "51.8", "20", "66.0", "26"],
+      ["EG (XL)", "54.6", "21 1/2", "68.1", "26 3/4"]
     ],
-    "notes": "Medidas aplican a algodón y sublimadas para dama. Tolerancia ±1.5 cm."
+    "imageUrl": "/size-guides/playera-dama.jpg",
+    "notes": "Corte entallado de dama."
   },
   {
-    "key": "tee.kids",
-    "title": "Guía de tallas - Playera niño",
-    "unit": "cm",
+    "slug": "playeras-nino",
+    "title": "Playeras • Niño",
+    "garment": "playera",
+    "audience": "niño",
+    "variant": "",
+    "columns": ["Talla", "Pecho (cm)", "Pecho (in)", "Largo (cm)", "Largo (in)"],
     "rows": [
-      { "size": "S",  "chest": 35.5, "length": 48.2 },
-      { "size": "M",  "chest": 38.1, "length": 52.0 },
-      { "size": "L",  "chest": 40.6, "length": 55.8 },
-      { "size": "XL", "chest": 43.1, "length": 59.2 }
+      ["CH", "35.5", "14", "48.2", "19"],
+      ["M",  "38.1", "15", "52.0", "20 1/2"],
+      ["G",  "40.6", "16", "55.8", "22"],
+      ["EG (XL)", "43.1", "17", "59.2", "23 1/2"]
     ],
-    "notes": "Pecho (A) y largo total (B). Tolerancia ±1.5 cm."
+    "imageUrl": "/size-guides/playera-nino.jpg",
+    "notes": "Corte infantil."
   },
   {
-    "key": "hoodie.hood-pouch",
-    "title": "Guía de tallas - Sudadera con capucha y cangurera (unisex)",
-    "unit": "cm",
+    "slug": "sudaderas-capucha-unisex",
+    "title": "Sudaderas con capucha • Unisex",
+    "garment": "sudadera",
+    "audience": "unisex",
+    "variant": "Con capucha y cangurera",
+    "columns": ["Talla", "Pecho (cm)", "Pecho (in)", "Largo (cm)", "Largo (in)"],
     "rows": [
-      { "size": "S",  "chest": 50.8, "length": 59.3 },
-      { "size": "M",  "chest": 55.8, "length": 61.9 },
-      { "size": "L",  "chest": 60.9, "length": 64.4 },
-      { "size": "XL", "chest": 66.0, "length": 66.9 }
+      ["CH", "50.8", "20", "59.3", "23 3/8"],
+      ["M",  "55.8", "22", "61.9", "24 3/8"],
+      ["G",  "60.9", "24", "64.4", "25 3/8"],
+      ["EG (XL)", "66.0", "26", "66.9", "26 3/8"]
     ],
-    "notes": "Valores de la lámina de sudadera con capucha/cangurera. Tolerancia ±1.5 cm."
+    "imageUrl": "/size-guides/sudadera-capucha.jpg",
+    "notes": "Unisex."
   },
   {
-    "key": "hoodie.plain",
-    "title": "Guía de tallas - Sudadera lisa (unisex)",
-    "unit": "cm",
+    "slug": "sudaderas-lisas-unisex",
+    "title": "Sudaderas lisas • Unisex",
+    "garment": "sudadera",
+    "audience": "unisex",
+    "variant": "Lisa",
+    "columns": ["Talla", "Pecho (cm)", "Pecho (in)", "Largo (cm)", "Largo (in)"],
     "rows": [
-      { "size": "S",  "chest": 45.7, "length": 67.9 },
-      { "size": "M",  "chest": 53.3, "length": 67.3 },
-      { "size": "L",  "chest": 58.4, "length": 71.1 },
-      { "size": "XL", "chest": 60.9, "length": 72.4 },
-      { "size": "2XL","chest": 63.5, "length": 75.5 }
+      ["CH", "45.7", "18", "67.9", "26 3/4"],
+      ["M",  "53.3", "21", "67.3", "26 1/2"],
+      ["G",  "58.4", "23", "71.1", "28"],
+      ["EG (XL)", "60.9", "24", "72.4", "28 1/2"],
+      ["EEG (2XL)", "63.5", "25", "75.5", "29 3/4"]
     ],
-    "notes": "Medidas de la lámina de sudadera lisa; tolerancia ±1.5 cm."
+    "imageUrl": "../assets/",
+    "notes": "Unisex."
   }
 ]

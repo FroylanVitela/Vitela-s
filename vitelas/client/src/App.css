@@ -1,3 +1,203 @@
+/* Título especial para la palabra CONTACTO */
+.contact-title {
+  text-align:center;
+  font-family:'Montserrat', 'Segoe UI', Arial, sans-serif;
+  font-size:2.5rem;
+  font-weight:900;
+  color:#e11d48;
+  letter-spacing:1.5px;
+  margin-bottom:1.2rem;
+  text-shadow:0 2px 16px rgba(225,29,72,0.08);
+}
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap');
+/* ================== MODAL DE DETALLE DE PRODUCTO ================== */
+.catalog-modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(15,23,42,0.85);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn .2s;
+}
+.catalog-modal {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.45);
+  max-width: 95vw;
+  max-height: 90vh;
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  position: relative;
+  animation: popIn .18s;
+  overflow-y: auto;
+}
+.catalog-modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: #e11d48;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(225,29,72,0.12);
+  transition: background .18s;
+}
+.catalog-modal-close:hover {
+  background: #be123c;
+}
+.catalog-modal-img {
+  width: 100%;
+  max-width: 340px;
+  max-height: 320px;
+  object-fit: contain;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  background: #fafafa;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+}
+.catalog-modal-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: .7rem;
+}
+.catalog-modal-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin: 0 0 .5rem 0;
+  color: #e11d48;
+}
+.catalog-modal-sub {
+  color: #6b7280;
+  font-size: 1rem;
+  margin-bottom: .5rem;
+}
+.catalog-modal-prices {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: .5rem;
+}
+.catalog-modal-prices div {
+  background: #f3f4f6;
+  border-radius: 8px;
+  padding: .5rem 1rem;
+  font-weight: 700;
+  color: #e11d48;
+  font-size: 1.1rem;
+}
+.catalog-modal-desc {
+  color: #374151;
+  font-size: 1.05rem;
+  margin-bottom: .5rem;
+}
+
+/* Mejoras visuales a las cards del catálogo */
+.card {
+  background: #fff;
+  border: 1.5px solid var(--line);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,.10);
+  transition: transform .18s, box-shadow .18s, border-color .18s;
+  display: flex;
+  flex-direction: column;
+  min-height: 340px;
+}
+.card:hover {
+  transform: translateY(-4px) scale(1.025);
+  box-shadow: 0 16px 40px rgba(225,29,72,.13);
+  border-color: #e11d48;
+}
+.card-img {
+  aspect-ratio: 4/3;
+  background: #fafafa;
+  background-size: cover;
+  background-position: center;
+  transition: transform .22s cubic-bezier(.4,1.6,.4,1);
+}
+.card:hover .card-img {
+  transform: scale(1.06);
+}
+.card-body {
+  padding: 1.1rem .9rem .9rem .9rem;
+  display: flex;
+  flex-direction: column;
+  gap: .4rem;
+  flex: 1;
+}
+.card-title {
+  font-size: 1.08rem;
+  font-weight: 700;
+  margin: 0 0 .2rem 0;
+  color: #e11d48;
+}
+.card-sub {
+  color: #6b7280;
+  font-size: .93rem;
+  margin-bottom: .2rem;
+}
+.card-price {
+  font-weight: 800;
+  color: #e11d48;
+  font-size: 1.1rem;
+}
+.card-btn {
+  margin-top: auto;
+  background: #e11d48;
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: .6rem 1.3rem;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(225,29,72,0.10);
+  transition: background .18s, box-shadow .18s;
+}
+.card-btn:hover {
+  background: #be123c;
+  box-shadow: 0 4px 16px rgba(225,29,72,0.18);
+}
+/* ================== MODAL DE IMAGEN PARA GUÍAS DE TALLAS ================== */
+.guide-img-modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(15,23,42,0.85);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn .2s;
+}
+.guide-img-modal-img {
+  max-width: 95vw;
+  max-height: 90vh;
+  border-radius: 18px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.45);
+  background: #fff;
+  padding: 0;
+  object-fit: contain;
+  animation: popIn .18s;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes popIn {
+  from { transform: scale(0.95); opacity: 0.7; }
+  to { transform: scale(1); opacity: 1; }
+}
 @layer reset,base,components,layout;
 
 /* ================== RESET ================== */
@@ -24,12 +224,35 @@
   .footer{border-top:1px solid var(--line);color:#6b7280;text-align:center;padding:2rem}
 
   /* --- Catálogo (lo usaremos después) --- */
-  .catalog h1{padding:1rem}
+  .catalog h1{
+    padding:1.2rem 0 1.5rem 0;
+    text-align:center;
+    font-family:'Montserrat', 'Segoe UI', Arial, sans-serif;
+    font-size:2.5rem;
+    font-weight:900;
+    color:#e11d48;
+    letter-spacing:1.5px;
+    text-shadow:0 2px 16px rgba(225,29,72,0.08);
+  }
   .catalog-grid{display:grid;grid-template-columns:280px 1fr;gap:1rem;padding:0 1rem 1rem}
   .filters{background:#fff;border:1px solid var(--line);border-radius:12px;padding:1rem;position:sticky;top:64px;height:fit-content}
   .f-block{display:grid;gap:.35rem;margin-bottom:1rem}
-  .f-block input,.f-block select{padding:.55rem;border:1px solid var(--line);border-radius:10px;background:#fff;color:#111}
-  .f-block label{color:#6b7280;font-size:.9rem}
+  .f-block input,.f-block select{
+    padding:.55rem .9rem;
+    border:1px solid var(--line);
+    border-radius:10px;
+    background:#fff;
+    color:#111;
+    width:100%;
+    box-sizing:border-box;
+    font-size:1rem;
+    outline:none;
+    transition: border .18s;
+  }
+  .f-block input:focus, .f-block select:focus {
+    border-color: #e11d48;
+  }
+  .f-block label{color:#6b7280;font-size:1rem}
 
   .cards .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem}
   .card{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden}
@@ -333,6 +556,16 @@
 }
 
 .size-guides-page{ padding:1rem }
+.size-guides-page h1{
+  text-align:center;
+  font-family:'Montserrat', 'Segoe UI', Arial, sans-serif;
+  font-size:2.5rem;
+  font-weight:900;
+  color:#e11d48;
+  letter-spacing:1.5px;
+  margin-bottom:1.2rem;
+  text-shadow:0 2px 16px rgba(225,29,72,0.08);
+}
 .guides-grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:1rem }
 .guide-card{ background:#fff; border:1px solid var(--line); border-radius:12px; padding:1rem; box-shadow:0 6px 14px rgba(0,0,0,.08) }
 .table-wrap{ overflow:auto; border:1px solid var(--line); border-radius:8px; margin-top:.5rem }
