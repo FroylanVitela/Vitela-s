@@ -1,13 +1,13 @@
 // Catálogo estático de Vitela's (frontend-only)
 export const CATEGORIES = {
-  mugs:       { key: 'mugs',       name: 'Tazas' },
-  bottles:    { key: 'bottles',    name: 'Botellas de aluminio' },
-  steel:      { key: 'steel',      name: 'Recipientes de acero' },
+  mugs:       { key: 'mugs',       name: 'Tazas cerámica' },
+  bottles:    { key: 'bottles',    name: 'Botellas aluminio' },
+  steel:      { key: 'steel',      name: 'Recipientes acero' },
   glass:      { key: 'glass',      name: 'Vidrio' },
   keytags:    { key: 'keytags',    name: 'Llaveros, placas y destapadores' },
-  tees:       { key: 'tees',       name: 'Playeras (algodón / deportivas / sublimadas)' },
-  kids:       { key: 'kids',       name: 'Playeras para niño' },
-  hoodies:    { key: 'hoodies',    name: 'Sudaderas con capucha y cangurera' },
+  tees:       { key: 'tees',       name: 'Playeras algodón/deportiva' },
+  kids:       { key: 'kids',       name: 'Playeras niño' },
+  hoodies:    { key: 'hoodies',    name: 'Sudaderas con capucha' },
   crewnecks:  { key: 'crewnecks',  name: 'Sudaderas lisas' },
 };
 
@@ -29,18 +29,18 @@ const PT = (p1, p2, p3) => ([
 // === TAZAS (cerámica) ===
 // Precios según PDF para cada modelo. :contentReference[oaicite:1]{index=1}
 const mugs = [
-  { slug:'taza-blanca-11oz',      title:'Taza blanca (11 oz)',      material:'ceramica', category:'mugs', priceTiers: PT(135,115,105) },
-  { slug:'taza-negra-11oz',       title:'Taza negra (11 oz)',       material:'ceramica', category:'mugs', priceTiers: PT(135,115,105) },
-  { slug:'taza-asa-corazon',      title:'Taza c/ asa de corazón',   material:'ceramica', category:'mugs', priceTiers: PT(150,130,115) },
-  { slug:'taza-perlada',          title:'Taza perlada',             material:'ceramica', category:'mugs', priceTiers: PT(150,130,115) },
-  { slug:'taza-espejo',           title:'Taza acabado espejo',      material:'ceramica', category:'mugs', priceTiers: PT(150,130,115) },
-  { slug:'taza-interior-color',   title:'Taza c/ asa e interior de color', material:'ceramica', category:'mugs', priceTiers: PT(120,105,95) },
-  { slug:'taza-color-cuchara',    title:'Taza c/ asa e interior de color + cuchara', material:'ceramica', category:'mugs', priceTiers: PT(135,115,95) },
-  { slug:'taza-conica-12',        title:'Taza cónica (12 oz)',      material:'ceramica', category:'mugs', priceTiers: PT(110,90,75) },
-  { slug:'taza-conica-17',        title:'Taza cónica (17 oz)',      material:'ceramica', category:'mugs', priceTiers: PT(120,105,95) },
-  { slug:'taza-magica-11',        title:'Taza mágica (11 oz)',      material:'ceramica', category:'mugs', priceTiers: PT(150,130,115) },
-  { slug:'taza-magica-conica-12', title:'Taza mágica cónica (12 oz)', material:'ceramica', category:'mugs', priceTiers: PT(140,120,105) },
-  { slug:'taza-magica-conica-17', title:'Taza mágica cónica (17 oz)', material:'ceramica', category:'mugs', priceTiers: PT(175,155,140) },
+  { slug:'taza-blanca-11oz',      title:'Taza blanca 11 oz',      material:'ceramica', category:'mugs', priceTiers: PT(120,105,95) },
+  { slug:'taza-negra-11oz',       title:'Taza negra 11 oz',       material:'ceramica', category:'mugs', priceTiers: PT(130,115,105) },
+  { slug:'taza-asa-corazon',      title:'Taza asa corazón',   material:'ceramica', category:'mugs', priceTiers: PT(140,125,115) },
+  { slug:'taza-perlada',          title:'Taza perlada',             material:'ceramica', category:'mugs', priceTiers: PT(140,125,115) },
+  { slug:'taza-espejo',           title:'Taza espejo',      material:'ceramica', category:'mugs', priceTiers: PT(140,125,115) },
+  { slug:'taza-interior-color',   title:'Taza interior color', material:'ceramica', category:'mugs', priceTiers: PT(120,105,95) },
+  { slug:'taza-color-cuchara',    title:'Taza color + cuchara', material:'ceramica', category:'mugs', priceTiers: PT(130,115,105) },
+  { slug:'taza-conica-12',        title:'Taza cónica 12 oz',      material:'ceramica', category:'mugs', priceTiers: PT(110,95,85) },
+  { slug:'taza-conica-17',        title:'Taza cónica 17 oz',      material:'ceramica', category:'mugs', priceTiers: PT(120,105,95) },
+  { slug:'taza-magica-11',        title:'Taza mágica 11 oz',      material:'ceramica', category:'mugs', priceTiers: PT(150,135,120) },
+  { slug:'taza-magica-conica-12', title:'Taza mágica cónica 12 oz', material:'ceramica', category:'mugs', priceTiers: PT(140,125,115) },
+  { slug:'taza-magica-conica-17', title:'Taza mágica cónica 17 oz', material:'ceramica', category:'mugs', priceTiers: PT(170,155,140) },
 ];
 
 // === BOTELLAS DE ALUMINIO === :contentReference[oaicite:2]{index=2}

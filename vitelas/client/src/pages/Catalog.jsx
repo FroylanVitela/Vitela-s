@@ -33,6 +33,17 @@ export default function Catalog(){
     return list;
   }, [q, category, material]);
 
+  // Mapeo de slugs a imágenes web para pruebas
+  const webImages = {
+    'taza-blanca-11oz': 'https://acdn-us.mitiendanube.com/stores/003/254/734/products/taza-blanca11-9aeb4baa26e03180ce16886727875897-1024-1024.png',
+    'taza-negra-11oz': 'https://i0.wp.com/gosublimacion.com/wp-content/uploads/2019/12/TAZA-CON-VENTANA.png?fit=1181%2C1181&ssl=1',
+    'taza-asa-corazon': 'https://colormake.com/wp-content/uploads/2023/01/thumbnail_image001.webp',
+    'tee-algodon-1-grande': 'https://creativity.mx/wp-content/uploads/2024/06/Playera_NEGRA_hombre.png',
+    'tee-sublimada-1-grande': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIcEiBl6szCQg7lLRVVuVqsdoA2Ma2xTW4Jg&s',
+    'hoodie-1-grande': 'https://acdn-us.mitiendanube.com/stores/003/254/734/products/sudadera-blanca11-243d1ef428c2ad923916865852190301-1024-1024.png',
+    'crew-1-grande': 'https://clek.com.mx/wp-content/uploads/2023/08/Frontal.png',
+  };
+
   return (
     <main className="catalog">
       <h1>Catálogo</h1>
@@ -72,31 +83,34 @@ export default function Catalog(){
         <section className="cards">
           {!filtered.length && <div className="status">No hay artículos que coincidan.</div>}
           <div className="grid">
-            {filtered.map(p => (
-              <article className="card hover-float" key={p.slug}>
-                <div className="card-img" style={{
-                  backgroundImage:`url(/catalog/${p.slug}.jpg)`
-                }} />
-                <div className="card-body">
-                  <h3 className="card-title">{p.title}</h3>
-                  <div className="card-sub">
-                    <em>{CATEGORIES[p.category]?.name}</em> · {MATERIALS.find(m=>m.key===p.material)?.name}
+            {filtered.map(p => {
+              const img = webImages[p.slug] || `/catalog/${p.slug}.jpg`;
+              return (
+                <article className="card hover-float" key={p.slug}>
+                  <div className="card-img" style={{
+                    backgroundImage:`url('${img}')`
+                  }} />
+                  <div className="card-body">
+                    <h3 className="card-title">{p.title}</h3>
+                    <div className="card-sub">
+                      <em>{CATEGORIES[p.category]?.name}</em> · {MATERIALS.find(m=>m.key===p.material)?.name}
+                    </div>
+                    <PriceTiers tiers={p.priceTiers} />
+                    <button className="card-btn" onClick={() => setModal(p)}>Ver más</button>
                   </div>
-                  <PriceTiers tiers={p.priceTiers} />
-                  <button className="card-btn" onClick={() => setModal(p)}>Ver más</button>
-                </div>
-              </article>
-            ))}
+                </article>
+              );
+            })}
           </div>
         </section>
       </div>
-
+      
       {/* Modal de detalle */}
       {modal && (
         <div className="catalog-modal-overlay" onClick={() => setModal(null)}>
           <div className="catalog-modal" onClick={e => e.stopPropagation()}>
             <button className="catalog-modal-close" onClick={() => setModal(null)} aria-label="Cerrar">×</button>
-            <img className="catalog-modal-img" src={`/catalog/${modal.slug}.jpg`} alt={modal.title} />
+            <img className="catalog-modal-img" src={webImages[modal.slug] || `/catalog/${modal.slug}.jpg`} alt={modal.title} />
             <div className="catalog-modal-content">
               <div className="catalog-modal-title">{modal.title}</div>
               <div className="catalog-modal-sub">

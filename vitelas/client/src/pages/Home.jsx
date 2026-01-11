@@ -4,6 +4,10 @@ import { HeroSlider } from '../components/HeroSlider';
 import slider1 from '../assets/slider1.jpg';
 import slider2 from '../assets/slider2.jpg';
 import slider3 from '../assets/slider3.jpg';
+import slider4 from '../assets/slider4.png';
+import slider5 from '../assets/slider5.png';
+import slider6 from '../assets/slider6.png';
+import slider7 from '../assets/slider7.png';
 
 /* Animación de aparición simple (sin librerías) */
 function useRevealOnScroll() {
@@ -60,7 +64,7 @@ export default function Home() {
 
         <div className="hero-visual">
           <HeroSlider
-            images={[slider1, slider2, slider3]}
+            images={[slider1, slider2, slider3,slider4,slider5,slider6,slider7]}
             interval={3500}
           />
         </div>
@@ -90,88 +94,84 @@ export default function Home() {
         </article>
       </section>
 
-      {/* Nuestra razón de ser (texto 2.1) */}
+      {/* Nuestra historia */}
       <section className="brand-grid" data-reveal>
         <article className="panel panel-scale">
           <h2 className="panel-title">
             <span aria-hidden>🐂 </span>
-            Vitela&apos;s Gifts & Clothes
+            Nuestra historia
           </h2>
           <p>
-            Es un negocio familiar dedicado a la venta de ropa de calidad, tazas y artículos diversos
-            con diseños originales, de moda, populares o personalizados a precios asequibles, lo cual
-            convierte a nuestra marca en el regalo ideal para toda ocasión.
+            <strong>Vitela&apos;s</strong> es un negocio familiar nacido en <strong>Aguascalientes, México</strong>.
+            Creamos artículos personalizados con dedicación y calidad para convertirlos en el regalo perfecto.
           </p>
           <p>
-            Para Vitela&apos;s Gifts & Clothes es un placer transmitir nuestro esfuerzo cotidiano y dedicación diaria
-            en cada uno de nuestros artículos como un obsequio hacia nuestros clientes. Esperando que puedan
-            disfrutar de nuestra marca con el mismo gusto que nosotros experimentamos al crearla.
-          </p>
-          <p>
-            Nuestra marca nace en la ciudad de <strong>Aguascalientes, Ags. México</strong>.
-            Contamos con servicio de <strong>mayoreo</strong> y <strong>menudeo</strong> en diseños propios o personalizados.
+            Cada diseño lleva nuestro esfuerzo diario y pasión por lo que hacemos. Trabajamos con la misma
+            ilusión con la que esperamos que disfrutes cada producto.
           </p>
           <div className="signature">
             <span>Atentamente,</span>
             <strong>Familia Vitela</strong>
           </div>
           <div className="note">
-            Contacto directo y pedidos en la página <Link to="/contact" className="slide-link">Contacto</Link>.
+            📲 Pedidos por WhatsApp en <Link to="/contact" className="slide-link">Contacto</Link>
           </div>
         </article>
 
-        {/* Cómo comprar + Anticipo (texto 2.2) */}
+        {/* Proceso de compra */}
         <article className="panel panel-scale">
-          <h2 className="panel-title"><span aria-hidden>🛒 </span>¿Cómo comprar?</h2>
+          <h2 className="panel-title"><span aria-hidden>🛒 </span>Proceso de compra</h2>
           <ul className="steps">
-            <li data-step="1"><span aria-hidden>📲 </span>Somos tienda online. Escríbenos por WhatsApp (en <Link to="/contact" className="slide-link">Contacto</Link>).</li>
-            <li data-step="2"><span aria-hidden>🧧 </span>Envíanos la imagen que te guste y dinos color y talla de tu prenda (o el artículo: taza, botella, etc.).</li>
-            <li data-step="3"><span aria-hidden>💻 </span>Te elaboramos una muestra digital para revisar el resultado final.</li>
-            <li data-step="4"><span aria-hidden>🚚 </span>Indícanos si prefieres entrega a domicilio (con costo extra) o recoger en taller (sin costo).</li>
+            <li data-step="1"><span aria-hidden>📲 </span>Contáctanos por WhatsApp</li>
+            <li data-step="2"><span aria-hidden>🎨 </span>Envía tu diseño + talla/artículo</li>
+            <li data-step="3"><span aria-hidden>💻 </span>Revisas muestra digital</li>
+            <li data-step="4"><span aria-hidden>💳 </span>50% anticipo para iniciar</li>
+            <li data-step="5"><span aria-hidden>🚚 </span>Entrega a domicilio o recoges en taller</li>
           </ul>
 
           <div className="divider" />
 
-          <h3 className="panel-subtitle"><span aria-hidden>💳 </span>¿Por qué solicitamos anticipo?</h3>
+          <h3 className="panel-subtitle"><span aria-hidden>⏱️ </span>Tiempos y condiciones</h3>
           <ul className="reasons">
-            <li data-reason><span aria-hidden>⚠️ </span>En inicios cobrábamos al entregar, pero hubo pedidos fraudulentos (no recibían, no respondían o daban ubicaciones falsas).</li>
-            <li data-reason><span aria-hidden>🧪 </span>El anticipo cubre materia prima y asegura el compromiso de ambas partes.</li>
-            <li data-reason><span aria-hidden>5️⃣ </span>El trabajo inicia con <strong>50% de anticipo</strong>; el resto se liquida al entregar.</li>
-            <li data-reason><span aria-hidden>🙏 </span>Clientes frecuentes: ¡gracias por su preferencia! Nuevos clientes: gracias por su comprensión.</li>
-            <li data-reason><span aria-hidden>🤝 </span>Compromiso: atención y servicio de calidad para quien solicita nuestros artículos de forma honorable.</li>
+            <li data-reason><span aria-hidden>📦 </span>Entrega: <strong>1 a 5 días</strong> según cantidad</li>
+            <li data-reason><span aria-hidden>💰 </span>Anticipo 50% para cubrir materiales e iniciar producción</li>
+            <li data-reason><span aria-hidden>🎁 </span>El resto se paga al recibir tu pedido</li>
+            <li data-reason><span aria-hidden>📍 </span>Recoger en taller: <strong>sin costo</strong> | Domicilio: <strong>costo extra</strong></li>
           </ul>
 
           <p className="lead muted">
-            Tiempo de entrega estimado: <strong>1 a 5 días</strong>, según carga de trabajo y cantidad de piezas.
+            ¿Por qué anticipo? Nos permite garantizar materiales de calidad y tu compromiso con el pedido. 🤝
           </p>
         </article>
       </section>
 
-      {/* Intro (servicios) */}
+      {/* Servicios */}
       <section className="intro" data-reveal>
         <div className="intro-card hover-float">
-          <h2><span aria-hidden>🛠️ </span>¿Qué hacemos?</h2>
+          <h2><span aria-hidden>🛠️ </span>Nuestros servicios</h2>
           <p>
-            Personalizamos artículos para regalo y uso diario: tazas de cerámica, botellas de aluminio,
-            recipientes de acero, envases de vidrio, llaveros y placas; además de playeras y sudaderas.
-            Producción bajo pedido para <strong>mayoreo</strong> y <strong>menudeo</strong>.
+            Personalizamos artículos para regalo y uso diario con tecnología <strong>DTF</strong> y <strong>Sublimación</strong>.
+            Trabajamos diseños propios o los tuyos, en <strong>mayoreo y menudeo</strong>.
           </p>
           <ul className="ticks">
-            <li data-tick><span aria-hidden>🖨️ </span>Impresión DTF (textil) y Sublimación (tazas/metal/vidrio)</li>
-            <li data-tick><span aria-hidden>👀 </span>Arte revisado antes de producir</li>
-            <li data-tick><span aria-hidden>💸 </span>Descuentos por cantidad</li>
+            <li data-tick><span aria-hidden>☕ </span>Tazas, botellas, vasos térmicos, vidrio</li>
+            <li data-tick><span aria-hidden>👕 </span>Playeras y sudaderas personalizadas</li>
+            <li data-tick><span aria-hidden>🪙 </span>Llaveros y placas de acero</li>
+            <li data-tick><span aria-hidden>💸 </span>Descuentos por volumen</li>
           </ul>
         </div>
 
         <div className="intro-card hover-float">
-          <h2><span aria-hidden>💡 </span>Queremos tu idea</h2>
+          <h2><span aria-hidden>💡 </span>Tu idea, nuestra misión</h2>
           <p className="muted">
-            Proponemos acabados, materiales y empaques para que tu regalo llegue &quot;listo para entregar&quot;.
+            Convertimos tu diseño en realidad con acabados profesionales.
+            Todo llega listo para regalar.
           </p>
           <ul className="ticks">
-            <li data-tick><span aria-hidden>🧪 </span>Pruebas de arte previas</li>
-            <li data-tick><span aria-hidden>🎨 </span>Catálogo de colores y acabados</li>
-            <li data-tick><span aria-hidden>⏱️ </span>Entrega puntual</li>
+            <li data-tick><span aria-hidden>👀 </span>Revisión de arte digital antes de imprimir</li>
+            <li data-tick><span aria-hidden>🎨 </span>Variedad de colores y materiales</li>
+            <li data-tick><span aria-hidden>⚙️ </span>Tecnología DTF y sublimación</li>
+            <li data-tick><span aria-hidden>📦 </span>Empaque incluido</li>
           </ul>
         </div>
       </section>

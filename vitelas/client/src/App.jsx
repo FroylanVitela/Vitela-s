@@ -4,10 +4,10 @@ import Catalog from './pages/Catalog';
 import ProductDetail from './pages/ProductDetail';
 import SizeGuides from './pages/SizeGuides';
 import Contact from './pages/Contact';
+import DesignStudio from './pages/DesignStudio';
 import './theme.css';
 import './App.css';
 import Navbar from './components/NavBar';
-import ComingSoon from './pages/CominSoon';
 
 export default function App() {
   return (
@@ -18,7 +18,7 @@ export default function App() {
         <Route path="/catalog" element={<Catalog />} />
         <Route path="/product/:id" element={<ProductDetail />} />
         <Route path="/size-guides" element={<SizeGuides />} />
-        <Route path="/comingsoon" element={<ComingSoon />} />
+        <Route path="/design-studio" element={<DesignStudio />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
 

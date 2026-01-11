@@ -1,0 +1,224 @@
+.design-studio {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 2rem 1rem;
+}
+
+.studio-header {
+  text-align: center;
+  color: white;
+  margin-bottom: 2rem;
+}
+
+.studio-header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.studio-header p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.studio-container {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Panel de controles */
+.controls-panel {
+  background: white;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  height: fit-content;
+}
+
+.control-group {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.control-group:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.control-group h3 {
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #6b7280;
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.5px;
+}
+
+/* Selector de producto */
+.product-selector {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+.product-selector button {
+  padding: 0.75rem;
+  border: 2px solid #e5e7eb;
+  background: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.product-selector button:hover {
+  border-color: #667eea;
+  background: #f9fafb;
+}
+
+.product-selector button.active {
+  border-color: #667eea;
+  background: #667eea;
+  color: white;
+}
+
+/* Botón de upload */
+.upload-btn {
+  display: block;
+  width: 100%;
+  padding: 0.875rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 8px;
+  text-align: center;
+  cursor: pointer;
+  font-weight: 500;
+  transition: transform 0.2s;
+}
+
+.upload-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.reset-btn {
+  width: 100%;
+  margin-top: 0.5rem;
+  padding: 0.75rem;
+  background: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.reset-btn:hover {
+  background: #dc2626;
+}
+
+/* Opciones de color */
+.color-options {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.color-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.color-btn:hover {
+  transform: scale(1.1);
+}
+
+.color-btn.active {
+  border-color: #667eea;
+  box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.2);
+}
+
+/* Selector de posición */
+.position-selector {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+.position-selector button {
+  padding: 0.625rem;
+  border: 2px solid #e5e7eb;
+  background: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.position-selector button:hover {
+  border-color: #667eea;
+  background: #f9fafb;
+}
+
+.position-selector button.active {
+  border-color: #667eea;
+  background: #667eea;
+  color: white;
+}
+
+/* Hint */
+.hint {
+  padding: 0.75rem;
+  background: #f3f4f6;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  color: #6b7280;
+  text-align: center;
+}
+
+/* Canvas container */
+.canvas-container {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  height: 600px;
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+  .studio-container {
+    grid-template-columns: 1fr;
+  }
+
+  .canvas-container {
+    height: 500px;
+  }
+}
+
+@media (max-width: 640px) {
+  .studio-header h1 {
+    font-size: 1.75rem;
+  }
+
+  .canvas-container {
+    height: 400px;
+  }
+
+  .controls-panel {
+    padding: 1rem;
+  }
+}

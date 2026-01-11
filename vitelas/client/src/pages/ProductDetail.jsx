@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useParams, useSearchParams } from 'react-router-dom';
-import api from '../services/api';
+import { PRODUCTS } from '../data/products';
 import { money } from '../utils/format';
 
 export default function ProductDetail() {
@@ -13,19 +13,32 @@ export default function ProductDetail() {
   const [qty, setQty] = useState(1);
 
   useEffect(() => {
-    let cancel = false;
-    (async () => {
-      setLoading(true); setErr('');
-      try {
-        const res = await api.get(`/products/${id}`);
-        if (!cancel) setDoc(res.data);
-      } catch (e) {
-        if (!cancel) setErr('No se pudo cargar el producto.');
-      } finally {
-        if (!cancel) setLoading(false);
-      }
-    })();
-    return () => { cancel = true; };
+    setLoading(true);
+    setErr('');
+    
+    // Buscar producto por slug
+    const product = PRODUCTS.find(p => p.slug === id);
+    
+    if (product) {
+      // Adaptar estructura local a formato esperado
+      setDoc({
+        name: product.title,
+        variants: [{
+          sku: product.slug,
+          name: product.title,
+          image: null, // Las imágenes se manejan en Catalog
+          priceTiers: product.priceTiers.map(tier => ({
+            label: tier.label,
+            price: tier.precio
+          })),
+          attributes: {}
+        }]
+      });
+    } else {
+      setErr('Producto no encontrado');
+    }
+    
+    setLoading(false);
   }, [id]);
 
   const variant = useMemo(() => {
