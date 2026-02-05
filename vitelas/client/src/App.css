@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap');
+
 /* Título especial para la palabra CONTACTO */
 .contact-title {
   text-align:center;
@@ -9,7 +11,6 @@
   margin-bottom:1.2rem;
   text-shadow:0 2px 16px rgba(225,29,72,0.08);
 }
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap');
 /* ================== MODAL DE DETALLE DE PRODUCTO ================== */
 .catalog-modal-overlay {
   position: fixed;
