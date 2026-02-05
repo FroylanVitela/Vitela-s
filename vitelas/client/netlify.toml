@@ -1,0 +1,38 @@
+[build]
+command = "npm run build"
+publish = "dist"
+
+# Configuración para manejar Single Page Application (SPA)
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200
+
+# Configuración de headers para mejor rendimiento
+[[headers]]
+for = "/*"
+[headers.values]
+X-Frame-Options = "SAMEORIGIN"
+X-Content-Type-Options = "nosniff"
+X-XSS-Protection = "1; mode=block"
+
+# Cache headers para assets
+[[headers]]
+for = "/asset/*"
+[headers.values]
+Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+for = "/*.js"
+[headers.values]
+Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+for = "/*.css"
+[headers.values]
+Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+for = "/*.woff2"
+[headers.values]
+Cache-Control = "public, max-age=31536000, immutable"
