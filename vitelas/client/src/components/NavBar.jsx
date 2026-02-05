@@ -96,7 +96,6 @@ export default function Navbar(){
           <NavLink to="/" className="nav-link"><IcoHome className="nav-ico" /> Inicio</NavLink>
           <NavLink to="/catalog" className="nav-link"><IcoCatalog className="nav-ico" /> Catálogo</NavLink>
           <NavLink to="/size-guides" className="nav-link"><IcoSize className="nav-ico" /> Guías de tallas</NavLink>
-          <NavLink to="/design-studio" className="nav-link"><IcoComingsoon className="nav-ico" />Diseña tu producto</NavLink>
           <NavLink to="/contact" className="nav-link"><IcoContact className="nav-ico" /> Contacto</NavLink>
         </nav>
 
@@ -136,7 +135,6 @@ export default function Navbar(){
           <NavLink to="/" className="m-link" onClick={() => setOpen(false)}>Inicio</NavLink>
           <NavLink to="/catalog" className="m-link" onClick={() => setOpen(false)}>Catálogo</NavLink>
           <NavLink to="/size-guides" className="m-link" onClick={() => setOpen(false)}>Guías de tallas</NavLink>
-          <NavLink to="/design-studio" className="m-link" onClick={() => setOpen(false)}>Diseña tu producto</NavLink>
           <NavLink to="/contact" className="m-link" onClick={() => setOpen(false)}>Contacto</NavLink>
         </nav>
       </div>

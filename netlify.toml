@@ -1,6 +1,7 @@
 [build]
+base = "vitelas/client"
 command = "npm run build"
-publish = "dist"
+publish = "vitelas/client/dist"
 
 # Configuración para manejar Single Page Application (SPA)
 [[redirects]]
