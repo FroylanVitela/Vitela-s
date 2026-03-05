@@ -102,24 +102,45 @@ export default function Home() {
     let animationProgress = 0.3;
     let uniforms;
     let textTexture;
+    let gl;
 
-    function createTextTexture(gl) {
+    function getResponsiveLogoSize() {
+      const screenWidth = window.innerWidth;
+      if (screenWidth < 480) {
+        // Mobile pequeño
+        return { width: 250, canvasWidth: 1024, canvasHeight: 512 };
+      } else if (screenWidth < 768) {
+        // Mobile tablet
+        return { width: 400, canvasWidth: 1536, canvasHeight: 768 };
+      } else {
+        // Desktop
+        return { width: 600, canvasWidth: 2048, canvasHeight: 1024 };
+      }
+    }
+
+    function createTextTexture() {
+      if (!gl) return;
+
+      const { width: logoWidth, canvasWidth, canvasHeight } = getResponsiveLogoSize();
       const logoCanvas = document.createElement("canvas");
       const logoCtx = logoCanvas.getContext("2d");
       
       const logoImg = new Image();
       logoImg.onload = () => {
-        logoCanvas.width = 2048;
-        logoCanvas.height = 1024;
+        logoCanvas.width = canvasWidth;
+        logoCanvas.height = canvasHeight;
         logoCtx.fillStyle = "white";
         logoCtx.fillRect(0, 0, logoCanvas.width, logoCanvas.height);
         
-        // Dibujar el logo centrado
-        const logWidth = 600;
-        const logHeight = (logoImg.height / logoImg.width) * logWidth;
-        const x = (logoCanvas.width - logWidth) / 2;
+        // Dibujar el logo centrado con tamaño responsivo
+        const logHeight = (logoImg.height / logoImg.width) * logoWidth;
+        const x = (logoCanvas.width - logoWidth) / 2;
         const y = (logoCanvas.height - logHeight) / 2;
-        logoCtx.drawImage(logoImg, x, y, logWidth, logHeight);
+        logoCtx.drawImage(logoImg, x, y, logoWidth, logHeight);
+        
+        if (textTexture) {
+          gl.deleteTexture(textTexture);
+        }
         
         textTexture = gl.createTexture();
         gl.bindTexture(gl.TEXTURE_2D, textTexture);
@@ -134,11 +155,13 @@ export default function Home() {
     }
 
     function initShader() {
-      const gl = canvasEl.getContext("webgl") || canvasEl.getContext("experimental-webgl");
-      if (!gl) {
+      const glContext = canvasEl.getContext("webgl") || canvasEl.getContext("experimental-webgl");
+      if (!glContext) {
         console.error("WebGL is not supported by your browser.");
         return null;
       }
+
+      gl = glContext;
 
       function createShader(gl, sourceCode, type) {
         const shader = gl.createShader(type);
@@ -189,11 +212,11 @@ export default function Home() {
       gl.enableVertexAttribArray(positionLocation);
       gl.bindBuffer(gl.ARRAY_BUFFER, vertexBuffer);
       gl.vertexAttribPointer(positionLocation, 2, gl.FLOAT, false, 0, 0);
-      createTextTexture(gl);
+      createTextTexture();
       return gl;
     }
 
-    const gl = initShader();
+    gl = initShader();
     if (!gl) return;
 
     function render() {
@@ -223,6 +246,8 @@ export default function Home() {
       canvasEl.height = window.innerHeight * devicePixelRatio;
       gl.viewport(0, 0, canvasEl.width, canvasEl.height);
       gl.uniform2f(uniforms.u_resolution, canvasEl.width, canvasEl.height);
+      // Regenerar textura con tamaño responsivo cuando cambia el tamaño de la ventana
+      createTextTexture();
     }
 
     window.addEventListener("resize", resizeCanvas);
