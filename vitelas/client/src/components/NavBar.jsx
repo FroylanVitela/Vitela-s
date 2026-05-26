@@ -95,6 +95,7 @@ export default function Navbar(){
         <nav className="nav-links" aria-label="Principal">
           <NavLink to="/" className="nav-link"><IcoHome className="nav-ico" /> Inicio</NavLink>
           <NavLink to="/catalog" className="nav-link"><IcoCatalog className="nav-ico" /> Catálogo</NavLink>
+          <NavLink to="/about" className="nav-link">Nosotros</NavLink>
           <NavLink to="/size-guides" className="nav-link"><IcoSize className="nav-ico" /> Guías de tallas</NavLink>
           <NavLink to="/contact" className="nav-link"><IcoContact className="nav-ico" /> Contacto</NavLink>
         </nav>
@@ -134,6 +135,7 @@ export default function Navbar(){
         <nav id="drawer" className="drawer" onClick={e => e.stopPropagation()} aria-label="Menú móvil">
           <NavLink to="/" className="m-link" onClick={() => setOpen(false)}>Inicio</NavLink>
           <NavLink to="/catalog" className="m-link" onClick={() => setOpen(false)}>Catálogo</NavLink>
+          <NavLink to="/about" className="m-link" onClick={() => setOpen(false)}>Nosotros</NavLink>
           <NavLink to="/size-guides" className="m-link" onClick={() => setOpen(false)}>Guías de tallas</NavLink>
           <NavLink to="/contact" className="m-link" onClick={() => setOpen(false)}>Contacto</NavLink>
         </nav>
